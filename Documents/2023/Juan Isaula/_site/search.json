@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Juan Isaula",
+    "section": "",
+    "text": "Licenciado en Matemáticas con Orientación en Estadística, Data Scientist & candidato a economista en UNAH y trabajo en el modelado predictivo y visualización con un enfoque economico. Mi trabajo actual se centra en el uso de lenguajes de programación como R, Python & Power BI para el tratamiento de datos y uso de modelos actuariales para estimación de Balances Actuariales, reservas técnicas, seguimiento de indicadores actuariales y revalorización de pensiones en el Instituto Hondureño de Seguridad Social (IHSS).\nEn este sitio mantengo una lista de mis publicaciones, presentaciones, así como un blog técnico\n\n\n\nBlack box models for forecasting financial time series.\nBLiTZ-Bayesian LSTM for Uncertainty Quantification.\nIntermediate Microeconomics With R.\nData Scientist\nActuarial Science\nFacebook Prophet Model (Forecast applied to the USD/HNL exchange rate)\nMachine Learning in Tidyverse (Multiple Modules with broom)\n\n\n\n\nTidyverse | Coleccion de paquetes orientados a manipulación, importación, exploración y visualización de datos.\nPyTorch | Biblioteca de Deep Learning con aplicaciones para redes neuronales.\nShiny | Paquete de R que facilita la creación de aplicaciones Web interactivas directamente desde R.\nlifecontingencies | Permite al usuario crear y manejar tablas de mortalidad, tablas actuariales (también tablas de decrementos múltiples). Además, contiene funciones para realizar facilmente matemáticas demográficas, financieras y actuariales en los cálculos de seguros de contingencias de vida.\nPerformanceAnalytics | Colección de funciones econométricas para el análisis de desempeño y riesgo."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#campos-de-interés",
+    "href": "index.html#campos-de-interés",
+    "title": "Juan Isaula",
+    "section": "Campos de Interés",
+    "text": "Campos de Interés\n\nBlack box models for forecasting financial time series.\nBLiTZ-Bayesian LSTM for Uncertainty Quantification.\nIntermediate Microeconomics With R.\nData Scientist\nActuarial Science\n:::"
+  }
+]

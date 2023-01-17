@@ -1,0 +1,30 @@
+{
+    "type": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+    ],
+    "data": [
+        "Timing stopped at: 0.15 0 0.17\n",
+        "Timing stopped at: 0.03 0 0.03\n",
+        "Timing stopped at: 0 0 0\n",
+        "Timing stopped at: 0.08 0 0.08\n",
+        "Timing stopped at: 0 0 0\n",
+        "Timing stopped at: 0.02 0 0.01\n",
+        "> ",
+        "install.packages(\"rsconnect\")",
+        "Error in install.packages : Updating loaded packages\n",
+        "> ",
+        "rsconnect::writeManifest()",
+        "\nRestarting R session...\n\n"
+    ]
+}

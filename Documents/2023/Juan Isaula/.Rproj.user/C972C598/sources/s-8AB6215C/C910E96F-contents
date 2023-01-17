@@ -1,0 +1,18 @@
+library(Rsolnp)
+
+fn <- function(x){
+  sqrt(x[1]^2 + x[2]^2)
+}
+
+eqn <- function(x){
+  z1 = 3*x[1] + 4*x[2]
+}
+
+const = c(50)
+
+x0 = c(2,2)
+
+sol1 <- solnp(x0, fun=fn, eqfun = eqn, eqB = const)
+
+
+sol1$pars
