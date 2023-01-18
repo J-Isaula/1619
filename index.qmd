@@ -1,0 +1,57 @@
+---
+title: "Juan Isaula"
+engine: knitr
+image: foto_wibsite.jpeg
+about:
+  template: trestles
+  links:
+    - text: LinkedIn
+      url: "https://www.linkedin.com/in/juan-isaula-817531239"
+    - text: Twitter
+      icon: twitter
+      url: "https://twitter.com/isaula_juan"
+    - text: GitHub
+      icon: github
+      url: "https://github.com/J-Isaula"
+    - text: Email
+      url: "jisaula@unah.hn"
+    - text: Blog
+      url: "blog.html"
+comments: false
+---
+
+::: column-page
+# Biografía
+
+Licenciado en Matemáticas con Orientación en Estadística, Data Scientist & candidato a economista en UNAH y trabajo en el modelado predictivo y visualización con un enfoque economico. Mi trabajo actual se centra en el uso de lenguajes de programación como R, Python & Power BI para el tratamiento de datos y uso de modelos actuariales para estimación de Balances Actuariales, reservas técnicas, seguimiento de indicadores actuariales y revalorización de pensiones en el Instituto Hondureño de Seguridad Social (IHSS).
+
+En este sitio mantengo una lista de mis publicaciones, presentaciones, así como un blog técnico
+
+## Campos de Interés y Trabajos Realizados
+
+1.  Black box models for forecasting financial time series.
+
+2.  BLiTZ-Bayesian LSTM for Uncertainty Quantification.
+
+3.  Intermediate Microeconomics With R.
+
+4.  Data Scientist
+
+5.  Actuarial Science
+
+6.  Facebook Prophet Model (Forecast applied to the USD/HNL exchange rate)
+
+7.  Machine Learning in Tidyverse (Multiple Modules with broom)
+
+### Paquetes R que más utilizo
+
+-   [Tidyverse](https://juanisaula.blogspot.com/2022/09/data-processing-with-tidyverse-in-r.html "Tidyverse") \| Coleccion de paquetes orientados a manipulación, importación, exploración y visualización de datos.
+
+-   [PyTorch](https://juanisaula.blogspot.com/2022/09/deep-learning-with-pytorch.html "PyTorch") \| Biblioteca de Deep Learning con aplicaciones para redes neuronales.
+
+-   [Shiny](https://juanisaula.blogspot.com/2022/09/r-shiny-for-enterprise-applications.html "Shiny") \| Paquete de R que facilita la creación de aplicaciones Web interactivas directamente desde R.
+
+-   [lifecontingencies](https://juanisaula.blogspot.com/2022/09/conmutados-actuariales-con-r.html "lifecontingencies") \| Permite al usuario crear y manejar tablas de mortalidad, tablas actuariales (también tablas de decrementos múltiples). Además, contiene funciones para realizar facilmente matemáticas demográficas, financieras y actuariales en los cálculos de seguros de contingencias de vida.
+
+-   [PerformanceAnalytics](https://juanisaula.blogspot.com/2022/09/introduction-to-portfolio-analysis-in-r.html "PerformanceAnalytics") \| Colección de funciones econométricas para el análisis de desempeño y riesgo.
+:::
