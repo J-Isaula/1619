@@ -3,7 +3,7 @@ title: "Modelo Prophet de Facebook"
 subtitle: "Pronóstico aplicado al tipo de cambio USD/HNL"
 author: "Juan Isaula"
 date: "2022-05-14"
-categories: [news]
+categories: [Prophet, Forecasting, R, RStudio]
 image: "Fondo_post2.PNG"
 ---
 
