@@ -1,16 +1,38 @@
 ---
-title: "J.Isaula"
+title: "Perfil"
 image: foto_wibsite.jpeg
 about:
-  template: jolla
+  template: trestles
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/isaula_juan
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/juan-isaula-817531239
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/J-Isaula
 ---
+
+::: justify
+Licenciado en Matemáticas con orientación en Estadística, Data Scientist y candidato a economista en UNAH; trabajo en el modelado predictivo y visualización con un enfoque en teoría economica, soy un amante de los modelos predictivos de Machine Learning y Deep Learnig. Mi trabajo actual se centra en el uso del servicio de analisis de datos de Microsoft Power BI y lenguajes de programación como R y Python para el tratamiento de datos, uso de modelos actuariales para estimación de Balances Actuariales, Reservas Técnicas, seguimiento de Indicadores Actuariales y Revalorización de Pensiones en el Instituto Hondureño de Seguridad Social.
+:::
+
+En este blog comparto y enseño todo lo que aprendo.
+
+**Campos de Interés y Trabajos Realizados**
+
+[Black box models for forecasting financial time series](https://github.com/J-Isaula/Modelos-de-Caja-Negra)
+
+[BLiTZ-Bayesian LSTM for Uncertainty Quantification.](https://medium.com/@juanisaula487/lstm-bayesiano-para-cuantificación-de-incertidumbre-10b06a33370d)
+
+[Intermediate Microeconomics with R](https://medium.com/@juanisaula487/microeconomía-intermedia-con-r-ad1c5c5a8909)
+
+[Facebook Prophet Model (Forecast Aplied to the USD/HNL exchange rate)](https://rpubs.com/Juan-Isaula/986679)
+
+[Michine Learning in Tidyverse (Multiple Modules with broom)](https://rpubs.com/Juan-Isaula/982033)
+
+[Machine Learning in Tidyverse (regression model and random forest model)](https://rpubs.com/Juan-Isaula/993285)
+
+[Actuarial Science](https://juanisaula.blogspot.com/2022/09/mortality-tables-with-r.html)
