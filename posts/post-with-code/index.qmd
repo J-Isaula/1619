@@ -1,10 +1,10 @@
 ---
 title: "Microeconomía Intermedia con R"
-subtitle: "Curvas de Indiferencia"
+subtitle: "Utilidad y sus Curvas de Indiferencia"
 author: "Juan Isaula"
 date: "2023-01-09"
 categories: [Economía, Microeconomía, R, RStudio]
-image: "fondo_1.PNG"
+image: "thumbnail.jpg"
 ---
 
 # Las Preferencias del Consumidor
