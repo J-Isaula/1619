@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>J.Isaula -</title>
+<title>Blog-Isaula -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">J.Isaula</span>
+    <span class="navbar-title">Blog-Isaula</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -113,15 +113,15 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html">
- <span class="menu-text">J.Isaula</span></a>
+ <span class="menu-text">Perfil</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/J-Isaula"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/isaula_juan"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -139,57 +139,44 @@ ul.task-list li input[type="checkbox"] {
         
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Economía">Economía <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Microeconomía">Microeconomía <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RStudio">RStudio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
-<div class="colmn-page">
-
-</div>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news" data-listing-date-sort="1673676000000" data-listing-file-modified-sort="1673984280662" data-listing-reading-time-sort="0.16">
+<div class="quarto-post image-right" data-index="0" data-categories="Economía,Microeconomía,R,RStudio" data-listing-date-sort="1673244000000" data-listing-file-modified-sort="1674158100093" data-listing-reading-time-sort="10.455">
 <div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Welcome To My Blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-Jan 14, 2023
-</div>
-<div class="listing-author">
-Tristan O’Malley
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Economía,Microeconomía,R,RStudio" data-listing-date-sort="1673244000000" data-listing-file-modified-sort="1674069203515" data-listing-reading-time-sort="10.455">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/fondo_1.PNG" class="thumnail-image"> </a></p>
+<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/thumbnail.jpg" class="thumnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/post-with-code/index.html">
@@ -197,7 +184,7 @@ Tristan O’Malley
 Microeconomía Intermedia con R
 </h3>
 <div class="listing-subtitle">
-Curvas de Indiferencia
+Utilidad y sus Curvas de Indiferencia
 </div>
 </a>
 <div class="listing-categories">
@@ -224,6 +211,41 @@ Una forma de iniciar el análisis de los…<span class="math inline"></span><spa
 <a href="./posts/post-with-code/index.html">
 <div class="listing-date">
 Jan 9, 2023
+</div>
+<div class="listing-author">
+Juan Isaula
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="news" data-listing-date-sort="1652508000000" data-listing-file-modified-sort="1674157755929" data-listing-reading-time-sort="6.08">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/Fondo_post2.PNG" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/welcome/index.html">
+<h3 class="no-anchor listing-title">
+Modelo Prophet de Facebook
+</h3>
+<div class="listing-subtitle">
+Pronóstico aplicado al tipo de cambio USD/HNL
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+</div>
+<a href="./posts/welcome/index.html">
+<div class="listing-description">
+En este post, te presento la implementación de Facebook Prophet, así como sus principales hiperparámetros ajustados para generar el modelo predictivo, dicho modelo lo…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html">
+<div class="listing-date">
+May 14, 2022
 </div>
 <div class="listing-author">
 Juan Isaula

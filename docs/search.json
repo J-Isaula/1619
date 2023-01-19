@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "J.Isaula",
+    "title": "Blog-Isaula",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 14, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nMicroeconomía Intermedia con R\n\n\nCurvas de Indiferencia\n\n\n\n\nEconomía\n\n\nMicroeconomía\n\n\nR\n\n\nRStudio\n\n\n\n\n\n\n\n\n\n\n\nJan 9, 2023\n\n\nJuan Isaula\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nMicroeconomía Intermedia con R\n\n\nUtilidad y sus Curvas de Indiferencia\n\n\n\n\nEconomía\n\n\nMicroeconomía\n\n\nR\n\n\nRStudio\n\n\n\n\n\n\n\n\n\n\n\nJan 9, 2023\n\n\nJuan Isaula\n\n\n\n\n\n\n  \n\n\n\n\nModelo Prophet de Facebook\n\n\nPronóstico aplicado al tipo de cambio USD/HNL\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nMay 14, 2022\n\n\nJuan Isaula\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -30,8 +30,71 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Modelo Prophet de Facebook",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "En este post, te presento la implementación de Facebook Prophet, así como sus principales hiperparámetros ajustados para generar el modelo predictivo, dicho modelo lo implementaremos para predecir el tipo de cambio de Honduras versus el dólar EE:UU (USD/HNL), considerando que esto será unicamente para conocer el funcionamiento del modelo, no para justificar que es el mejor modelo para realizar la actividad descrita previamente."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Perfil",
+    "section": "",
+    "text": "Licenciado en Matemáticas con orientación en Estadística, Data Scientist y candidato a economista en UNAH; trabajo en el modelado predictivo y visualización con un enfoque en teoría economica, soy un amante de los modelos predictivos de Machine Learning y Deep Learnig. Mi trabajo actual se centra en el uso del servicio de analisis de datos de Microsoft Power BI y lenguajes de programación como R y Python para el tratamiento de datos, uso de modelos actuariales para estimación de Balances Actuariales, Reservas Técnicas, seguimiento de Indicadores Actuariales y Revalorización de Pensiones en el Instituto Hondureño de Seguridad Social.\n\nEn este blog comparto y enseño todo lo que aprendo.\nCampos de Interés y Trabajos Realizados\nBlack box models for forecasting financial time series\nBLiTZ-Bayesian LSTM for Uncertainty Quantification.\nIntermediate Microeconomics with R\nFacebook Prophet Model (Forecast Aplied to the USD/HNL exchange rate)\nMichine Learning in Tidyverse (Multiple Modules with broom)\nMachine Learning in Tidyverse (regression model and random forest model)\nActuarial Science"
+  },
+  {
+    "objectID": "about.html#campos-de-interés-y-trabajos-realizados",
+    "href": "about.html#campos-de-interés-y-trabajos-realizados",
+    "title": "Perfil",
+    "section": "Campos de Interés y Trabajos Realizados",
+    "text": "Campos de Interés y Trabajos Realizados\n\nBlack box models for forecasting financial time series\nBLiTZ-Bayesian LSTM for Uncertainty Quantification.\nIntermediate Microeconomics with R\nFacebook Prophet Model (Forecast Aplied to the USD/HNL exchange rate)\nMichine Learning in Tidyverse (Multiple Modules with broom)\nMachine Learning in Tidyverse (regression model and random forest model)\nActuarial Science"
+  },
+  {
+    "objectID": "about.html#paquetes-r-y-python-que-más-utilizo",
+    "href": "about.html#paquetes-r-y-python-que-más-utilizo",
+    "title": "CV",
+    "section": "Paquetes R y Python que más utilizo",
+    "text": "Paquetes R y Python que más utilizo\nTidyverse | Coleccion de paquetes orientados a manipulación, importación, exploración y visualización de datos.\nPyTorch | Biblioteca de Deep Learning con aplicaciones para redes neuronales.\nShiny | Paquete de R que facilita la creación de aplicaciones Web interactivas directamente desde R.\nlifecontingencies | Permite al usuario crear y manejar tablas de mortalidad, tablas actuariales (también tablas de decrementos múltiples). Además, contiene funciones para realizar facilmente matemáticas demográficas, financieras y actuariales en los cálculos de seguros de contingencias de vida.\nPerformanceAnalytics | Colección de funciones econométricas para el análisis de desempeño y riesg"
+  },
+  {
+    "objectID": "about.html#paquetes-de-r-y-python-que-más-utilizo",
+    "href": "about.html#paquetes-de-r-y-python-que-más-utilizo",
+    "title": "Perfil",
+    "section": "Paquetes de R y Python que más utilizo",
+    "text": "Paquetes de R y Python que más utilizo\nTidyverse | Coleccion de paquetes orientados a manipulación, importación, exploración y visualización de datos.\nPyTorch | Biblioteca de Deep Learning con aplicaciones para redes neuronales.\nShiny | Paquete de R que facilita la creación de aplicaciones Web interactivas directamente desde R.\nlifecontingencies | Permite al usuario crear y manejar tablas de mortalidad, tablas actuariales (también tablas de decrementos múltiples). Además, contiene funciones para realizar facilmente matemáticas demográficas, financieras y actuariales en los cálculos de seguros de contingencias de vida.\nPerformanceAnalytics | Colección de funciones econométricas para el análisis de desempeño y riesg"
+  },
+  {
+    "objectID": "posts/welcome/index.html#descripción-general-del-modelo",
+    "href": "posts/welcome/index.html#descripción-general-del-modelo",
+    "title": "Modelo Prophet de Facebook",
+    "section": "Descripción General del Modelo",
+    "text": "Descripción General del Modelo\nFacebook Prophet es un modelo y una biblioteca que proporciona características tanto de modelos lineales generalizados (MLG) como de modelos aditivos (MA), principalmente extendiendo el MLG mediante el uso de funciones de suavizado no lineal. Fue especificado por Taylor y Letham en 2017.\nProphet es un software de código abierto lanzado por el equipo Core Data Science de Facebook. Está disponible para su descarga en CRAN y PyPI. En esta ocasión usaremos el lenguaje R para implementar el modelo, sin embargo, tu puedes hacerlo en Python si es de tu preferencia.\nProphet funciona mejor con series temporales que tienen fuertes efectos estacionales y varias temporadas de datos históricos. Prophet es resistente a los datos faltantes y los cambios en la tendencia, y por lo general maneja bien los valores atípicos. Prophet esta diseñado especificamente para la predicción de series temporales de negocios.\nSu modelo aditivo que consta de cuatro componentes, esta dado por:\n\\[\ny(t) = g(t) + s(t) + h(t) + \\epsilon_{t}\n\\]\ndonde,\n\n\\(g(t)\\): Representa la tendencia y el objetivo es capturar la tendencia de la serie. Por ejemplo, es probable que la cantidad de vistas de anuncios de Facebook aumente con el tiempo a medida que más personas se unen a la red. Pero, ¿cuál sería la función exacta del aumento?\n\\(s(t)\\): Es el componente de Estacionalidad. El número de anuncios también puede depender de la temporada. Por ejemplo, en el hemisferio norte durante los meses de verano, es probable que las personas pasen más tiempo al aire libre y menos tiempo frente a sus computadoras. Tales fluctuaciones pueden ser muy diferentes para diferentes series temporales de negocios. El segundo componente es, por lo tanto, una función que modela las tendencias estacionales.\n\\(h(t)\\): Representa los efectos de las vaciones. Usamos la información para días festivos que tienen claro impacto en la mayoria de las series temporales comerciales. Tenga en cuenta que las vaciones varían entre años, países, etc. Y, por lo tanto, la información debe proporcionarse explícitamente al modelo.\n\\(\\epsilon_{t}\\): Es el término de error. Representa fluctuaciones aleatorias que el modelo no puede explicar. Como de costumbre, se supone que \\(\\epsilon_{t}\\) sigue una distribución \\(N(0,1)\\) con media cero y varianza desconocida \\(\\sigma\\) que debe derivarse de los datos ."
+  },
+  {
+    "objectID": "posts/welcome/index.html#hiperparámetros",
+    "href": "posts/welcome/index.html#hiperparámetros",
+    "title": "Modelo Prophet de Facebook",
+    "section": "Hiperparámetros",
+    "text": "Hiperparámetros\nHay varios parámetros personalizables en la implementación de Facebook Prophet (revisar), siendo los principales:\n\nPuntos de cambio: definen los cambios de tendencia. Estos pueden ser encontrados por el propio algoritmo o también pueden ser definidos y ajustados por el analista.\nEstacionalidad: define las funciones periódicas que pueden afectar a la serie temporal. De forma predeterminada, Prophet considera la estacionalidad anual, semanal y diaria e intenta encontrar tendencias que representan esos efectos periódicos en los datos.\nDías festivos: los días especiales (días festivos o cualquier otro evento recurrente) también pueden ser modelados por el modelo aditivo.\n\nEn R, se usa la API de ajuste de modelo normal. Proporcionamos una función prophet que realiza el ajuste y devuelve un objeto de modelo. Posteriormeente usted puede llamar a la función predict y plot en este objeto modelo."
+  },
+  {
+    "objectID": "posts/welcome/index.html#datos-y-preparación",
+    "href": "posts/welcome/index.html#datos-y-preparación",
+    "title": "Modelo Prophet de Facebook",
+    "section": "Datos y Preparación",
+    "text": "Datos y Preparación\nLos datos que utilizaremos los encontramos en Yahoo! Finance. Así como Python tiene un paquete para importar datos directamente de Yahoo Finance, R también cuenta con sus paquetes particular que nos permiten realizar una tarea similar. Necesitamos los siguiente paquetes:\n\nlibrary(TTR)\nlibrary(quantmod)\n\nLoading required package: xts\n\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\n\nRegistered S3 method overwritten by 'quantmod':\n  method            from\n  as.zoo.data.frame zoo \n\n\nSi aún no los tienes instalados sugiero los instales usando install.packages(\"name paquete\"). Muy bien, ahora si estamos listos para poder extraer nuestros datos de yahoo finance y para ello usaremos la funcion getSymbols del paquete quantmod. Veamos,\n\ndf <- getSymbols('HNL=X',src = 'yahoo',\n                 from = \"2010-01-01\",\n                 to = \"2022-12-20\",\n                 auto.assign = FALSE)\n\nTenga en cuenta que from =  \"2010-01-01\" y to = \"2022-12-20\" nos ayudan a indicar desde que fecha quiero comenzar a tomar mis datos y hasta que fecha quiero tomarlos. Además, auto.assign = FALSE indica a getSymbols que devuelva los datos.\nAhora, conozcamos nuestros datos\n\nhead(df)\n\n           HNL=X.Open HNL=X.High HNL=X.Low HNL=X.Close HNL=X.Volume\n2010-01-04     18.690     18.691    18.517      18.518            0\n2010-01-05     18.550     18.550    18.550      18.550            0\n2010-01-06     18.572     18.645    18.544      18.545            0\n2010-01-07     18.451     18.550    18.451      18.539            0\n2010-01-08     18.556     18.556    18.556      18.556            0\n2010-01-11     18.550     18.550    18.550      18.550            0\n           HNL=X.Adjusted\n2010-01-04         18.518\n2010-01-05         18.550\n2010-01-06         18.545\n2010-01-07         18.539\n2010-01-08         18.556\n2010-01-11         18.550\n\n\nDe estos datos únicamente usaremos el valor de cierre (HNL=X.Close) de manera diaria del lempira hondureño contra el dólar, para enfocarnos solo en esos datos, primero convertiremos nuestro conjunto de datos df en un dataframe, dado que inicialmente es un objeto de tipo xts,\n\nclass(df)\n\n[1] \"xts\" \"zoo\"\n\n\npara realizar el cambio a un dataframe, considere la siguiente función\n\nxts_to_datframe<-function(data_xts){\n  df_t<-data.frame(fecha=(index(data_xts)),\n                   value=coredata(data_xts))\n  colnames(df_t)<-c(\"ds\", \"y\")\n  df_t\n}\n\nTiene que tener cuidado con el nombramiento de sus columnas, dado que prophet reconoce unicamente marcos de datos con columnas nombras como ds y y, qu contienen la fecha y el valor numérico de sus observaciones respectivamente. Con esto en mente, pasemos a transformar df a un objeto de clase dataframe por medio de la función que construimos previamente:\n\nHNL <- xts_to_datframe(df$`HNL=X.Close`) \nclass(HNL)\n\n[1] \"data.frame\"\n\n\nPuede apreciar que ya tenemos nuestro marco de datos como un dataframe, y estamos listos para comenzar a crear nuestro modelo."
+  },
+  {
+    "objectID": "posts/welcome/index.html#implementación-del-modelo",
+    "href": "posts/welcome/index.html#implementación-del-modelo",
+    "title": "Modelo Prophet de Facebook",
+    "section": "Implementación del Modelo",
+    "text": "Implementación del Modelo\nPrimero visualicemos nuestros datos\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.0      ✔ purrr   0.3.5 \n✔ tibble  3.1.8      ✔ dplyr   1.0.10\n✔ tidyr   1.2.0      ✔ stringr 1.5.0 \n✔ readr   2.1.2      ✔ forcats 0.5.1 \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::first()  masks xts::first()\n✖ dplyr::lag()    masks stats::lag()\n✖ dplyr::last()   masks xts::last()\n\nlibrary(ggplot2)\n\nHNL %>% ggplot(aes(x = ds, y = y))+\n  geom_line()+\n  theme_minimal()+\n   labs(title = 'Datos Historicos del Tipo de Cambio del USD/HNL',\n       subtitle = '2010 - 2022',\n       x = 'Fecha',\n       y = 'HNL',\n       caption = 'Elaboracion propia con datos de yahoo finance')\n\n\n\n\n\nlibrary(prophet)\n\nLoading required package: Rcpp\n\n\nLoading required package: rlang\n\n\n\nAttaching package: 'rlang'\n\n\nThe following objects are masked from 'package:purrr':\n\n    %@%, as_function, flatten, flatten_chr, flatten_dbl, flatten_int,\n    flatten_lgl, flatten_raw, invoke, splice\n\nm <- prophet(HNL,daily.seasonality = TRUE)\n\nfuture <- make_future_dataframe(m,periods = 3,freq = 'day')\ntail(future)\n\n             ds\n3380 2022-12-16\n3381 2022-12-19\n3382 2022-12-20\n3383 2022-12-21\n3384 2022-12-22\n3385 2022-12-23\n\n\n\nforecast <- predict(m, future)\n\ndyplot.prophet(m, forecast)\n\n\n\n\n\nDe la figura previa,\n\nLos puntos negros representan medidas reales\nLa linea azul el pronóstico de Prophet\nLa banda azul representa el intervalo de incertidumbre"
+  },
+  {
+    "objectID": "posts/welcome/index.html#desglose-del-pronóstico",
+    "href": "posts/welcome/index.html#desglose-del-pronóstico",
+    "title": "Modelo Prophet de Facebook",
+    "section": "Desglose del Pronóstico",
+    "text": "Desglose del Pronóstico\nSi bien el pronóstico arroja muchas cosas, podemos centrarnos en algunas como:\n\nds fecha que se pronostica\nyhat predicción para el valor y (tipo de cambio) ese día en particular.\nyhat_lower valor esperado más bajo para el rango del valor y previsto ese día\nyhat_upper valor esperado más alto para el rango de valor y previsto de ese día\n\nCon tail() podemos ver la salida de los últimos días pronosticados los cuales son 21, 22 y 23 de diciembre 2022.\n\ntail(forecast[c('ds', 'yhat', 'yhat_lower', 'yhat_upper')])\n\n             ds     yhat yhat_lower yhat_upper\n3380 2022-12-16 24.10924   23.35550   24.81319\n3381 2022-12-19 24.04473   23.34643   24.78962\n3382 2022-12-20 24.11075   23.36657   24.84634\n3383 2022-12-21 24.08755   23.36248   24.78496\n3384 2022-12-22 24.12633   23.37224   24.80660\n3385 2022-12-23 24.13436   23.45985   24.87838\n\n\nSegun nuestros resultados, nuestro modelo nos ve obteniendo para el día 21 de diciembre entre 23.35901 (yhat_lower) y 24.83438 (yhat_upper) lempiras por un dolar de EE.UU.\nPara entender el pronóstico más a detalle, podemos gráficar sus componentes con:\n\nprophet_plot_components(m,forecast)\n\n\n\n\nRecuerde que el fin de este post, no es abogar por el uso indiscriminado de Prophet como el mejor modelo para pronosticar el tipo de cambio hondureño vs el dólar. Espero hayas conocido las generalidades de este modelo y su utilidad en el ambito predictivo."
   }
 ]
