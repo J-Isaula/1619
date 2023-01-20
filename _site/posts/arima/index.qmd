@@ -1,0 +1,9 @@
+---
+title: "ARIMA Models in Python"
+author: "Juan Isaula"
+date: "2021-05-14"
+categories: [ARIMA, Forecasting, Python]
+image: "Fondo_post2.PNG"
+---
+
+¿Alguna vez has tratado de predecir el futuro? Lo que se avecina es un misterio que normalmente solo se resuelve esperando. En este artículo, dejara de esperar y aprenderá a usar los poderosos modelos de la clase ARIMA para pronosticar el futuro. Aprenderá a usar el paquete `statsmodels` para analizar series de tiempo, construir modelos personalizados y pronosticar bajo incertidumbre. ¿Cómo se movera el mercado de valores en las próximas 24 horas? ¿Como cambiaran los niveles de CO2 en la próxima década? ¿Cuántos terremotos habrá el próximo año? aprenderás a resolver todos estos problemas y más.
