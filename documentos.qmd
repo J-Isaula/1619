@@ -1,0 +1,29 @@
+---
+title: "Asignaciones"
+#image: foto_wibsite.jpeg
+documentos:
+  template: trestles
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/isaula_juan
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/juan-isaula-817531239
+    - icon: github
+      text: Github
+      href: https://github.com/J-Isaula
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE,
+                      message=FALSE, warning=FALSE,
+                      fig.path='figs/',
+                      cache.path = '_cache/',
+                      fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      })
+```
+
+Bienvenidos a esta sección de mi blog, en este apartado trate de publicar cada uno de los trabajos asignados al curso de Microeconomía Intermedia con `R`
