@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Juan Isaula">
-<meta name="dcterms.date" content="2022-09-30">
+<meta name="dcterms.date" content="2023-01-15">
 
 <title>Blog-Isaula - Machine Learning en Tidyverse</title>
 <style>
@@ -149,6 +149,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../../about.html">
  <span class="menu-text">Perfil</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../documentos.html">
+ <span class="menu-text">Asignaciones</span></a>
+  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/J-Isaula"><i class="bi bi-github" role="img">
 </i> 
@@ -220,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 30, 2022</p>
+      <p class="date">January 15, 2023</p>
     </div>
   </div>
   
@@ -234,14 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="exploración-de-coeficientes-entre-modelos">Exploración de Coeficientes entre Modelos</h2>
 <p>Asumire que el lector tiene cierto conocimiento de la teoría de modelos lineales, en caso de no ser así, no te preocupes visita este <a href="https://rpubs.com/Juan-Isaula/982033">link</a> para que puedas ir a leer las generalidades de estos modelos y su uso en <code>R,</code> principalmente los tres paquetes de <code>broom</code> que le permiten explorar estos modelos. En este post trataremos de combinar estas técnica para aprender más sobre estos modelos y sus datos.</p>
 <p>A continuación cargaremos algunos de los paquetes que nos ayudaran para poder realizar nuestra tarea,</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-1_3f18182f7a086a1995f1e46b032cedab">
+<div class="cell" data-hash="_cache/unnamed-chunk-1_a71c2de37d5b33d8ee979d9171bdcf29">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># para manipulación de datos</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder) <span class="co"># marco de datos que utilizaremos </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)    <span class="co"># conjunto de datos y funciones para analisis de datos</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)     <span class="co"># Resumen informacion sobre objetos estadisticos en tibbles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Recuerde que el marco de <code>gapminder</code> contiene informacion sobbre cada país desde 1960 hasta 2016. Crearemos una variable que llamaremos <code>gap_anidado</code> para obtener que las características de cada país este anidadas como un <code>tibble.</code> La ventaja de usar estos tibble es que podemos construir modelos lineales simples que predicen la esperanza de vida por año para cada país. Nos centraremos en aprender a usar los coeficientes de estos modelos para obtener nuevos conocimientos sobre los datos de gapminder.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-2_74896b1a7fd274ca4f11ed5c5a071a79">
+<div class="cell" data-hash="_cache/unnamed-chunk-2_e73e36d30c155f472936771851334867">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gap_anidado <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> <span class="fu">nest</span>()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap_anidado)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -259,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Tal como lo mencionamos previamente, <code>gap_anidado</code> contiene las características de cada país anidadas como un <code>tibble.</code> Con esto hecho, procederemos a construir modelos lineales para cada país, para ello usaremos la función <code>map()</code> del paquete <code>purrr</code></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-3_8ac5f0a29ebc24f5cea8c159687b4e92">
+<div class="cell" data-hash="_cache/unnamed-chunk-3_99a929eba1108a1ee061e5d09fd096e6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gap_models <span class="ot">&lt;-</span> gap_anidado <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(life_expectancy<span class="sc">~</span>year,<span class="at">data =</span> .x)))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -293,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><span class="math inline">\(\beta\)</span>: Es el coeficiente del año (variable <span class="math inline">\(x\)</span>), que para un modelo de regresión lineal simple corresponde directamente a la pendiente del mismo.</p></li>
 </ul>
 <p>Usando la función <code>tidy()</code> del paquete <code>broom</code> en el primer modelo, aprenderemos que con cada año que pasa la esperanza de vida promedio de la población de este país en particular aumenta aproximadamente 0.23 años. Este enfoque puede brindarle información sobre el crecimiento o la falta de crecimiento en la esperanza de vida a lo largo del tiempo para los países que esta modelando.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-4_a5d49dacc8999ce2bb362182df703aac">
+<div class="cell" data-hash="_cache/unnamed-chunk-4_0501ad1aa68e01fe03f0bceebd56e1ed">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(gap_models<span class="sc">$</span>model[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
@@ -307,7 +311,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="coeficientes-de-modelos-múltiples" class="level3">
 <h3 class="anchored" data-anchor-id="coeficientes-de-modelos-múltiples">Coeficientes de Modelos Múltiples</h3>
 <p>Puede generar estos coeficientes mapeando la funcíon <code>tidy()</code> para cada uno de nuestros modelos y luego simplificando el nuevo marco de datos usando la función <code>unnest()</code>. Esto da como resultado un <code>tibble</code> que contiene la estimación para cada coeficiente de cada país.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-5_686704fcf49e04dd9162b70546b1a46f">
+<div class="cell" data-hash="_cache/unnamed-chunk-5_822693ab1d3178d568bfe8e2066e75cf">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gap_models <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">coef =</span> <span class="fu">map</span>(model, <span class="sc">~</span><span class="fu">tidy</span>(.x))) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(coef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -341,7 +345,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <p>En la siguiente figura, le muestro dos ejemplos, el primero con un valor alto y el segundo con un valor bajo de su <span class="math inline">\(R^2\)</span> respectivamente. Note que en el caso donde el <span class="math inline">\(R^2 = 0.009\)</span> es bajo o cercano a cero, esto nos indica que un modelo lineal esta capturando una cantidad proporcionalmente pequeña de la variación en los datos y. por lo tanto, no se ajusta bien. Por el contrario el modelo con <span class="math inline">\(R^2 = 0.965\)</span> valor que es más cercano a 1, lo que indica que este modelo lineal se ajusta bien a los datos. Puede evaluar el ajuste de los modelos midiendo el valor del <span class="math inline">\(R^2\)</span> para cada modelo.</p>
 <p><img src="ml1.PNG" class="img-fluid"></p>
 <p>Muy bien, con el conocimiento previo, hechemos un vistazo a nuestros modelos. Para ello usamos <code>map()</code> y <code>glance()</code> para crear un marco de datos de estadísticas de resumen para cada modelo almacenado como la columna coef. Luego, puede simplificar estos marcos de datos usando la función <code>unnest()</code>. Esto nos dará como resultado un tibble que contendrá las estadisticas del modelo para cada modelo de país.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-6_66f0563d3258646906225b9b60dc2369">
+<div class="cell" data-hash="_cache/unnamed-chunk-6_3c952fd68ee3c1db3894dfd0ec51978a">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model_perf <span class="ot">&lt;-</span> gap_models <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">coef =</span> <span class="fu">map</span>(model,<span class="sc">~</span><span class="fu">glance</span>(.x))) <span class="sc">%&gt;%</span> </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(coef)</span>
@@ -373,7 +377,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <h3 class="anchored" data-anchor-id="modelos-con-mejor-y-peor-ajuste">Modelos con Mejor y Peor Ajuste</h3>
 <p>Siendo un poco más curiosos, tratemos de explorar el ajuste de los modelos. Para ver esto, podemos filtrar los valores más alto de <code>r.squared</code>, tomaremos como un r.squared alto 0.995 en adelante.</p>
 <p>Por ejemplo, podemos usar la función <code>slice_max()</code> de <code>dplyr</code> para encontrar los modelos que mejor se ajustan. Asimismo, podemos encontrar los modelos con el peor ajuste utilizando la función <code>slice_min()</code>. Hechemos un vistazo al código y los resultados generados,</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-7_bc6436d507b2e53099dc35bda36ade6a">
+<div class="cell" data-hash="_cache/unnamed-chunk-7_86865ae3861cffb1794d589ef05a5ac3">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mejores_models <span class="ot">&lt;-</span> model_perf <span class="sc">%&gt;%</span> <span class="fu">filter</span>(r.squared <span class="sc">&gt;</span> <span class="fl">0.995</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mejores_models</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -390,7 +394,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 </div>
 </div>
 <p>y para los peores filtremos los países que tienen un modelo con un <code>r.squared</code> menor a 0.3</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-8_a61dc0a46ee167b70cfc05de6599bd28">
+<div class="cell" data-hash="_cache/unnamed-chunk-8_a14b3264d9b25957554ae7bbc468c7b8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>peores_modelos <span class="ot">&lt;-</span> model_perf <span class="sc">%&gt;%</span> <span class="fu">filter</span>(r.squared <span class="sc">&lt;</span> <span class="fl">0.3</span>) </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>peores_modelos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -419,7 +423,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <section id="creación-de-marco-de-datos-aumentados" class="level3">
 <h3 class="anchored" data-anchor-id="creación-de-marco-de-datos-aumentados">Creación de Marco de Datos Aumentados</h3>
 <p>Para hacer esto, primero debe crear un marco de datos que contenga tanto los valores predichos como los originales. Esto requiere primero usar <code>map()</code> y <code>augment()</code> para trabajar en la columna de la lista que contiene los modelos para crear marcos de datos anidados que contengan tanto los valores originales como los predichos. Luego, puede usar <code>unnest()</code> en esta nueva columna para simplificar estos marcos de datos y permitir una mayor exploración.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-9_42e2fb0a63176e3c58a084ccba4323bb">
+<div class="cell" data-hash="_cache/unnamed-chunk-9_73fa9c34f4d15d91860b483af9205cf8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>augment_models <span class="ot">&lt;-</span> gap_models <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">augmented =</span> <span class="fu">map</span>(model,<span class="sc">~</span><span class="fu">augment</span>(.x))) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(augmented)</span>
@@ -449,7 +453,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <section id="modelo-para-bahamas-r2-0.995" class="level3">
 <h3 class="anchored" data-anchor-id="modelo-para-bahamas-r2-0.995">Modelo para Bahamas <span class="math inline">\(R^2 = 0.995\)</span></h3>
 <p>Note que dado que su <span class="math inline">\(R^2\)</span> es bastante alto, podemos asumir que el modelo lineal se ajusta bien a los datos. Puede comparar el ajuste del modelo con los datos originales trazando ambos en el mismo gráfico. En este ejemplo, usaremos <code>ggplot2</code> para trazar los valores originales de la esperanza de vida como un diagrama de dispensión usando <code>geom_point()</code> y agregué el ajuste del modelo lineal como una línea roja usando <code>geom_line()</code></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-10_00640ecc5cc21233e274e07128a40cd2">
+<div class="cell" data-hash="_cache/unnamed-chunk-10_caf36ccf3b2eb42c06a8a3c0a083fcbd">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>augment_models <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Bahamas"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> life_expectancy)) <span class="sc">+</span> </span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
@@ -467,7 +471,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <section id="modelo-para-ukraine-r2-0.16" class="level3">
 <h3 class="anchored" data-anchor-id="modelo-para-ukraine-r2-0.16">Modelo para Ukraine <span class="math inline">\(R^2 = 0.16\)</span></h3>
 <p>Ahora veamos el modelo correspondiente al país Ukraine, que tiene un valor de <span class="math inline">\(R^2\)</span> super más bajo que el de Bahamas. Claramente, esperariamos encontrarnos con un modelo que no se ajuste bien a los datos dado el antecedente del <span class="math inline">\(R^2\)</span></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-11_4ce63fda32f039d7db78be950bc3aa0b">
+<div class="cell" data-hash="_cache/unnamed-chunk-11_0e1f02d3f0018529d44c349c806c1c63">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>augment_models <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Ukraine"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> life_expectancy)) <span class="sc">+</span> </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
@@ -485,7 +489,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <section id="visualización-de-peores-y-mejores-modelos" class="level3">
 <h3 class="anchored" data-anchor-id="visualización-de-peores-y-mejores-modelos">Visualización de Peores y Mejores modelos</h3>
 <p>En este caso, prepararemos los cuatro mejores modelos que consideramos anteriormente y los peores y los visualizaremos,</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-12_a78a0408e7832d108aaf75a0d6844c51">
+<div class="cell" data-hash="_cache/unnamed-chunk-12_68a936d276070eecbcd17c836b0ea28a">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mejores_augment <span class="ot">&lt;-</span> mejores_models <span class="sc">%&gt;%</span> </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">augmented =</span> <span class="fu">map</span>(model, <span class="sc">~</span><span class="fu">augment</span>(.x))) <span class="sc">%&gt;%</span> </span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(augmented)</span>
@@ -495,7 +499,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(augmented)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bien, ahora visualizamos los modelos</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-13_9271f646f400c863d1db6db0c46db77e">
+<div class="cell" data-hash="_cache/unnamed-chunk-13_2846bfb6a554dac64eee9c18cab6b57c">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mejores_augment <span class="sc">%&gt;%</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span> </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_expectancy)) <span class="sc">+</span> </span>
@@ -506,7 +510,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 <p><img src="figs/unnamed-chunk-13.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="cell" data-hash="_cache/unnamed-chunk-14_060fb828a660c0b37f54b2b51331e533">
+<div class="cell" data-hash="_cache/unnamed-chunk-14_cc17b329868624fa09aaf5de4e535407">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>peores_augment <span class="sc">%&gt;%</span> </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span> </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_expectancy)) <span class="sc">+</span> </span>
@@ -601,7 +605,7 @@ R^2 = \frac{\%~variación~explicada~por~el~modelo}{\%~variación~total~de~los~da
 </tbody>
 </table>
 <p>Ahora si, apliquemos un modelo lineal generalizado para ver si mejorar estos datos</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-15_d86922fc58a3cc3814099e89c3d7dd6f">
+<div class="cell" data-hash="_cache/unnamed-chunk-15_175c8bf584922e11147f80801f3cd605">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos un modelo lineal para cada país</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>gap_fullmodel <span class="ot">&lt;-</span> gap_anidado <span class="sc">%&gt;%</span> </span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">map</span>(data, </span>

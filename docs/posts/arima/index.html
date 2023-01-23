@@ -9,7 +9,7 @@
 <meta name="author" content="Juan Isaula">
 <meta name="dcterms.date" content="2021-05-14">
 
-<title>Blog-Isaula - ARIMA Models in Python</title>
+<title>Blog-Isaula - Series de Tiempo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,10 +123,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -150,6 +148,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li class="nav-item">
     <a class="nav-link" href="../../about.html">
  <span class="menu-text">Perfil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../documentos.html">
+ <span class="menu-text">Asignaciones</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/J-Isaula"><i class="bi bi-github" role="img">
@@ -176,10 +178,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modelos-arma" id="toc-modelos-arma" class="nav-link active" data-scroll-target="#modelos-arma">Modelos ARMA</a>
+  <li><a href="#series-temporales" id="toc-series-temporales" class="nav-link active" data-scroll-target="#series-temporales">Series Temporales</a>
   <ul class="collapse">
-  <li><a href="#series-temporales-y-estacionariedad" id="toc-series-temporales-y-estacionariedad" class="nav-link" data-scroll-target="#series-temporales-y-estacionariedad">Series temporales y Estacionariedad</a></li>
+  <li><a href="#datos-de-series-temporales" id="toc-datos-de-series-temporales" class="nav-link" data-scroll-target="#datos-de-series-temporales">Datos de Series Temporales</a>
+  <ul class="collapse">
+  <li><a href="#estacionariedad" id="toc-estacionariedad" class="nav-link" data-scroll-target="#estacionariedad">Estacionariedad</a></li>
+  <li><a href="#heterocedasticidad" id="toc-heterocedasticidad" class="nav-link" data-scroll-target="#heterocedasticidad">Heterocedasticidad</a></li>
   <li><a href="#ruido-blanco" id="toc-ruido-blanco" class="nav-link" data-scroll-target="#ruido-blanco">Ruido Blanco</a></li>
+  </ul></li>
+  <li><a href="#test-para-prueba-de-ruido-blanco" id="toc-test-para-prueba-de-ruido-blanco" class="nav-link" data-scroll-target="#test-para-prueba-de-ruido-blanco">Test para prueba de ruido blanco</a>
+  <ul class="collapse">
+  <li><a href="#test-de-box-pierce" id="toc-test-de-box-pierce" class="nav-link" data-scroll-target="#test-de-box-pierce">Test de Box Pierce</a></li>
+  <li><a href="#test-de-ljung-box" id="toc-test-de-ljung-box" class="nav-link" data-scroll-target="#test-de-ljung-box">Test de Ljung-Box</a></li>
+  </ul></li>
+  <li><a href="#modelo-autorregresivo-de-orden-p" id="toc-modelo-autorregresivo-de-orden-p" class="nav-link" data-scroll-target="#modelo-autorregresivo-de-orden-p">Modelo Autorregresivo de Orden <span class="math inline">\(p\)</span></a>
+  <ul class="collapse">
+  <li><a href="#función-de-autocorrelación-parcial-pacf" id="toc-función-de-autocorrelación-parcial-pacf" class="nav-link" data-scroll-target="#función-de-autocorrelación-parcial-pacf">Función de Autocorrelación Parcial (PACF)</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,11 +204,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ARIMA Models in Python</h1>
+<h1 class="title">Series de Tiempo</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">ARIMA</div>
-    <div class="quarto-category">Forecasting</div>
-    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Time Series</div>
+    <div class="quarto-category">RStudio</div>
+    <div class="quarto-category">R</div>
   </div>
   </div>
 
@@ -221,106 +236,201 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>¿Alguna vez has tratado de predecir el futuro? Lo que se avecina es un misterio que normalmente solo se resuelve esperando. En este artículo, dejara de esperar y aprenderá a usar los poderosos modelos de la clase ARIMA para pronosticar el futuro. Aprenderá a usar el paquete <code>statsmodels</code> para analizar series de tiempo, construir modelos personalizados y pronosticar bajo incertidumbre. ¿Cómo se movera el mercado de valores en las próximas 24 horas? ¿Como cambiaran los niveles de CO2 en la próxima década? ¿Cuántos terremotos habrá el próximo año? aprenderás a resolver todos estos problemas y más.</p>
-<section id="modelos-arma" class="level1">
-<h1>Modelos ARMA</h1>
-<p>Vamos adentrarnos directamente y aprender sobre las propiedades más importantes de las series temporales. Aprenderá sobre la estacionariedad y como esto es importante para los modelos ARMA. Aprenderá como probar la estacionariedad a simple vista y con una prueba estadistica estandar. Finalmente aprenderá la estructura básica de los modelos ARMA y la usara para generar algunos datos ARMA y ajustar un modelo ARMA.</p>
-<section id="series-temporales-y-estacionariedad" class="level3">
-<h3 class="anchored" data-anchor-id="series-temporales-y-estacionariedad">Series temporales y Estacionariedad</h3>
-<p>Los datos de series temporales están en todas partes en este mundo. Se utilizan en una amplia variedad de campos. Hay muchos conjuntos de datos para los que nos gustaría poder predecir el futuro. Conocer el futuro de las tasas de obesidad podría ayudarnos a intervenir ahora por la salud pública; predecir las demandas de energía de los consumidores podría ayudar a que las centrales electricas funcionen de manera más eficiente; y predecir como cambiara la población de una ciudad podría ayudarnos a construir la infraestructura que necesitamos.</p>
-<p>Comencemos examinando una serie de tiempo. Podemos cargar una serie temporal desde <code>csv</code> usando <code>pandas</code>. Aquí establecemos el índice como la columna de fecha (<code>index_col)</code> y analizamos la fecha en el tipo de dato decha y hora (<code>parse_dates</code>)</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"candy_production.csv"</span>,index_col <span class="op">=</span> <span class="st">"fecha"</span>, parse_dates <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-
-<div>
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>IPG3113N</th>
-    </tr>
-    <tr>
-      <th>fecha</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1972-01-01</th>
-      <td>85.6945</td>
-    </tr>
-    <tr>
-      <th>1972-01-02</th>
-      <td>71.8200</td>
-    </tr>
-    <tr>
-      <th>1972-01-03</th>
-      <td>66.0229</td>
-    </tr>
-    <tr>
-      <th>1972-01-04</th>
-      <td>64.5645</td>
-    </tr>
-    <tr>
-      <th>1972-01-05</th>
-      <td>65.0100</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2017-01-04</th>
-      <td>107.4288</td>
-    </tr>
-    <tr>
-      <th>2017-01-05</th>
-      <td>101.9209</td>
-    </tr>
-    <tr>
-      <th>2017-01-06</th>
-      <td>104.2022</td>
-    </tr>
-    <tr>
-      <th>2017-01-07</th>
-      <td>102.5861</td>
-    </tr>
-    <tr>
-      <th>2017-01-08</th>
-      <td>114.0613</td>
-    </tr>
-  </tbody>
-</table>
-<p>548 rows × 1 columns</p>
+<section id="series-temporales" class="level1">
+<h1>Series Temporales</h1>
+<p>Una serie temporal es una colección de observaciones indexadas por la fecha de cada observación, denotada por <span class="math inline">\(y_t\)</span></p>
+<p><span class="math display">\[
+\{y_1, y_2, . . . . , y_T\}
+\]</span></p>
+<p>En la práctica se asume que lo anterior es sólo una muestra, pero que la serie pudo haber sido observada en más periodos.</p>
+<p><span class="math display">\[
+\{y_t\}_{t = -\infty}^\infty = \{. . . , y_{-1}, y_0, y_1, y_2, . . . , y_T,y_{T+1},y_{T+2}, . . .\}
+\]</span></p>
+<p>En el análisis de series temporales el objetivo es extraer parámetros relevantes o características de ellas. Estas características pueden ser luego utilizadas para generar un modelo matemático que describa la serie y pueda ser utilizado para realizar predicciones.</p>
+<p>De acuerdo a la cantidad de variables variables o características que la serie temporal contenga se considera univariada para el caso de una variable, o multivariada para el caso de multiples variables. De esta fundamental característica depende los pasos a seguir para su análisis y prediccón.</p>
+<section id="datos-de-series-temporales" class="level2">
+<h2 class="anchored" data-anchor-id="datos-de-series-temporales">Datos de Series Temporales</h2>
+<p>Un paquete que utilizaremos mucho durante este post es <code>astsa</code>, <em>que significa Análisis de series de tiempo estadístico aplicado.</em></p>
+<p>Ahora, para comenzar, exploremos la naturaleza de los datos de series de tiempo. Aquí tenemos la serie de ganancias trimestrales por acción de Johnson &amp; Johnson.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(astsa)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(jj, <span class="at">main =</span> <span class="st">"Ganancias Trimestrales por Acción de Johnson &amp; Johnson"</span>,<span class="at">type =</span> <span class="st">"c"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(jj, <span class="at">labels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Tiene algunas características comunes de los datos de series de tiempo, tendencia al alza, estacionalidad en el sentido de que el seguendo y el tercer trimestre suelen subir, mientras que el cuarto trimestre suele bajar. Además existe heterosticidad porque, a medida que crece el valor del activo, los pequeños cambios porcentuales se convierten en grandes cambios absolutos.</p>
+<p>Muy bien previamente mencionamos dos palabras importantes en el análisis de series temporales, las cuales son <em>heterosticidad</em> y <em>estacionariedad</em>, antes de continuar definiremos esta terminología:</p>
+<section id="estacionariedad" class="level3">
+<h3 class="anchored" data-anchor-id="estacionariedad">Estacionariedad</h3>
+<p>La base del análisis de series de tiempo es la estacionariedad. Se dice que una serie de tiempo <span class="math inline">\(\{y_t\}\)</span> es estrictamente estacionaria si la distribución conjunta <span class="math inline">\((y_{t_1}, . . . , y_{t_k})\)</span> es idéntica a la de <span class="math inline">\((y_{t_1+t}, . . . , y_{t_k+t})\)</span>, para todo <span class="math inline">\(t\)</span>, donde <span class="math inline">\(k\)</span> es un entero positivo arbitrario y <span class="math inline">\((t_1, . . . , t_k)\)</span> es una colección de <span class="math inline">\(k\)</span> enteros positivos. En otras palabras la estacionariedad estricta requiere que la distribución conjunta de <span class="math inline">\((y_{t_1}, . . . , y_{t_k})\)</span> sea invariante bajo el cambio de tiempo. Esta es una condición muy fuere que es dificil de verificar empíricamente. A menudo se asume una versión más débil de la estacionariedad. Una serie de tiempo <span class="math inline">\(\{y_t\}\)</span> es debilmente estacionaria si tanto la media de <span class="math inline">\(y_t\)</span> como la varianza entre <span class="math inline">\(y_t\)</span> y <span class="math inline">\(y_{t-\ell}\)</span> son invariantes en el tiempo, donde <span class="math inline">\(\ell\)</span> es un número entero arbitrario. Más específicamente <span class="math inline">\(\{y_t\}\)</span> es débilmente estacionaria si:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+E(y_t) &amp;=&amp; \mu\\[0.2cm]
+Cov(y_t, y_{t-\ell}) &amp;=&amp; \gamma_t
+\end{eqnarray}
+\]</span></p>
+<p>La covarianza <span class="math inline">\(\gamma_t\)</span> se llama autocovarianza lag(rezago)-<span class="math inline">\(\ell\)</span> de <span class="math inline">\(y_t\)</span>. Tiene dos propiedades importantes:</p>
+<ol type="1">
+<li><span class="math inline">\(\gamma_0 = Var(y_t)\)</span></li>
+<li><span class="math inline">\(\gamma_{-\ell} = \gamma_t\)</span></li>
+</ol>
+<p>La segunda propiedad se mantiene, ya que</p>
+<p><span class="math display">\[
+Cov(y_t, y_{t - (-\ell)}) = Cov(y_{t-(-\ell)},y_t) = Cov(y_{t+\ell},y_t) = Cov(y_{t_1},y_{t_1-1})
+\]</span></p>
+<p>donde <span class="math inline">\(t_1 = t + \ell\)</span>.</p>
+<p><strong>Observación:</strong> Supongamos que <span class="math inline">\(y_t \sim N(\mu_t, \sigma_t^2)\)</span>, decimos que es estacionario si <span class="math inline">\(\mu_t\)</span> y <span class="math inline">\(\sigma_t^2\)</span> son constantes, entonces:</p>
+<ul>
+<li><p>No estacionaria si <span class="math inline">\(\mu_t\)</span> está cambiado con el tiempo.</p></li>
+<li><p>No estacionaria si <span class="math inline">\(\sigma_t^2\)</span> está cambiando con el tiempo.</p></li>
+</ul>
+<p>En las aplicaciones, la estacionariedad débil le permite a uno hacer inferencias con respecto a observaciones futuras.</p>
+</section>
+<section id="heterocedasticidad" class="level3">
+<h3 class="anchored" data-anchor-id="heterocedasticidad">Heterocedasticidad</h3>
+<p>En estadística se dice que un modelo de regresión presenta heterocedasticidad cuando la varianza de los errores no es constante en todas las observaciones realizadas.</p>
+<p>Existen diferentes razones o situaciones en las que cabe encontrarse con perturbaciones heteroscedásticas. La situación más frecuente es en el análisis de datos de corte transversal, ya que los individuos o empresas o unidades económicas no suelen tener un comportamiento homogéneo.</p>
+<p>Otra situación en la que se presenta hereroscedasticidad es en muestras cuyos datos son valores que se han obtenido agregando o promediando datos individuales.</p>
+<p>Con esto en mente, veamos nuestra segunda seria, la cual presenta las desviaciones anuales de temperatura global. Los datos son desviaciones de la temperatura promedio entre 1960 y 1980. Notará que los datos tienen una tendencia generalmente positiva, pero la tendencia no siempre es positiva. A diferencia de los datos de Johnson y Johnson, esta serie no tiene un componente estacional y es homocedástica</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(globtemp, <span class="at">main =</span> <span class="st">"Desviaciones de Temperatura Global"</span>,<span class="at">type =</span> <span class="st">"o"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
-<section id="tendencia" class="level4">
-<h4 class="anchored" data-anchor-id="tendencia">Tendencia</h4>
-<p>Una caracteristica importante de una serie de tiempo es su tendencia. Una tendencia positiva es una línea que generalmente se inclinan hacia arriba: los valores aumentan con el tiempo. Del mismo modo, una tendencia negativa es donde los valores disminuyen.</p>
-<p><img src="im1.PNG" class="img-fluid"></p>
-</section>
-<section id="estacionalidad" class="level4">
-<h4 class="anchored" data-anchor-id="estacionalidad">Estacionalidad</h4>
-<p>Otra característica importante es la estacionalidad. Una serie temporal estacional tiene patrones que se repiten a intervalos regulares, por ejemplo ventas altas todos los fines de semana</p>
-<p><img src="im2.PNG" class="img-fluid"></p>
-</section>
-<section id="ciclicidad" class="level4">
-<h4 class="anchored" data-anchor-id="ciclicidad">Ciclicidad</h4>
-<p>Por el contrario, la ciclicidad es donde hay un patrón repetitivo pero no un periodo fijo</p>
-</section>
+</div>
+<p>La tercera serie son los rendimientos semanales del S&amp;P 500. El S&amp;P 500 es un índice bursátil estadounidense basado en 500 grandes corporaciones. Los rendimientos son el cambio porcentual por periodos de tiempo. A diferencia de las otras series, esta no tiene ninguna tendencia o estacionalidad. De hecho, parece que no hay ningún patrón en la serie (excepto que, de vez en cuando, la variación es grande). Este es un ejemplo de un tipo particular de proceso llamado ruido blanco.</p>
 </section>
 <section id="ruido-blanco" class="level3">
 <h3 class="anchored" data-anchor-id="ruido-blanco">Ruido Blanco</h3>
-<p>El ruido blanco es un concepto importante en series temporales y modelos ARIMA. El ruido blanco es una serie de mediciones, donde cada valor no esta correlacionado con los valores anteriores. Puede pensar en esto como lanzar una moneda, el resultado de un lanzamiento de moneda no depende de los resultados de lanzamiento anteriores. De manera similar, con el ruido blanco, el valor de la serie no depende de los valores anteriores.</p>
+<p>Cuando se estiman modelos de series de tiempo, es importante evaluar si los residuos de la estimación correspoonden a un ruido blanco.</p>
+<p>Sea <span class="math inline">\(\epsilon_t\)</span> una sucesión cuyos elementos tiene media cero y varianza <span class="math inline">\(\sigma^2\)</span></p>
+<p><span class="math display">\[
+\begin{eqnarray}
+E(\epsilon_t) &amp;=&amp; 0\hspace{2.5cm} (media\hspace{0.1cm}cero)\\[0.2cm]
+E(\epsilon_t^2) &amp;=&amp; \sigma^2 \hspace{2.3cm} (varianza\hspace{0.1cm} constante)\\[0.2cm]
+E(\epsilon_t\epsilon_\tau) &amp;=&amp; 0\hspace{0.2cm}para\hspace{0.1cm} t\neq \tau\hspace{0.4cm}(terminos\hspace{0.1cm}no\hspace{0.1cm}correlacionados)
+\end{eqnarray}
+\]</span></p>
+<p>Si los términos están normalmente distribuidos, es decir:</p>
+<p><span class="math display">\[
+\epsilon_t \sim N(0,\sigma^2)
+\]</span></p>
+<p>entonces diremos que <span class="math inline">\(\epsilon_t\)</span> es ruido blanco gaussiano. Una forma de evaluar si los residuos son ruido blanco es determinar si las autocorrelaciones</p>
+<p><span class="math display">\[
+\rho_1 = \rho_2 = . . . = \rho_\tau = 0
+\]</span></p>
+<p>para todo <span class="math inline">\(\tau\geq 1\)</span>.</p>
+</section>
+</section>
+<section id="test-para-prueba-de-ruido-blanco" class="level2">
+<h2 class="anchored" data-anchor-id="test-para-prueba-de-ruido-blanco">Test para prueba de ruido blanco</h2>
+<section id="test-de-box-pierce" class="level3">
+<h3 class="anchored" data-anchor-id="test-de-box-pierce">Test de Box Pierce</h3>
+<p>¿Es esta serie un caso de ruido blanco?</p>
+<p><span class="math display">\[
+H_0: \rho_1 = \rho_2 = . . . = \rho_m = 0\hspace{0.5cm} \fbox{si es ruido blanco}
+\]</span></p>
+<p><span class="math display">\[
+Q^* = T\sum_{j = 1}^m \hat{\rho}^2\sim \chi_{m-k}^2
+\]</span></p>
+<p>Si <span class="math inline">\(Q^* &gt; \chi_{m-k}(1-\alpha)\)</span>, rechazar <span class="math inline">\(H_0\)</span> con <span class="math inline">\(100\alpha\%\)</span> de significancia: la serie no es ruido blanco.</p>
+<p>La intuición es que si la serie no es ruido blanco, algunos <span class="math inline">\(\hat{\rho}_j\)</span> serán muy grandes, y entonces <span class="math inline">\(Q^*\)</span> también lo será.</p>
+</section>
+<section id="test-de-ljung-box" class="level3">
+<h3 class="anchored" data-anchor-id="test-de-ljung-box">Test de Ljung-Box</h3>
+<p>¿Es esta serie un caso de ruido blanco?</p>
+<p><span class="math display">\[
+H_0: \rho_1 = \rho_2 = . . . = \rho_m = 0\hspace{0.5cm} \fbox{si es ruido blanco}
+\]</span></p>
+<p><span class="math display">\[
+Q = T(T+2)\sum_{j=1}^m \frac{\hat{\rho}_j^2}{T - j}\sim \chi_{m-k}^2
+\]</span></p>
+<p>Si <span class="math inline">\(Q &gt; \chi_{m-k}(1-\alpha)\)</span>, rechazar <span class="math inline">\(H_0\)</span> con <span class="math inline">\(100\alpha\%\)</span> de significancia: la serie no es ruido blanco. Este test es similar al de Box-Pierce, peero ajustada para muestras pequeñas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: zoo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'zoo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sp500w, <span class="at">main =</span> <span class="st">"S&amp;P 500 Rendimientos Semanales"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="modelo-autorregresivo-de-orden-p" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-autorregresivo-de-orden-p">Modelo Autorregresivo de Orden <span class="math inline">\(p\)</span></h2>
+<p>En este modelo, influye los rezagos previos (es decir, observaciones pasadas). Consideremos el ruido blanco <span class="math inline">\(\epsilon_t\)</span>. El modelo <span class="math inline">\(AR(P)\)</span> es:</p>
+<p><span class="math display">\[
+y_t = c + \phi y_{t-1} + . . . + \phi_p y_{t-p} + \epsilon_t
+\]</span></p>
+<p>Note que la ecuación previa la podemos escribir como:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+y_t - \phi_1 y_{t-1} - . . . - \phi_p y_{t-p} &amp;=&amp; c + \epsilon_t\\[0.2cm]
+\underbrace{(1 + \phi_1 L^1 - . . . - \phi_p L^p)}_{\Phi(L)} &amp;=&amp; c + \epsilon_t
+\end{eqnarray}
+\]</span></p>
+<p>El proceso <span class="math inline">\(AR(p)\)</span> es una ecuación en diferencia de orden <span class="math inline">\(p\)</span>. Esta ecuación es estable si y solo si las raíces del polinomio <span class="math inline">\(1 - \phi_1 z^1 - . . . - \phi_p z^p\)</span> están todas fuera del círculo unitario.</p>
+<p>Si el proceso es estable, resolvemos para <span class="math inline">\(y_t\)</span>,</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+y_t &amp;=&amp; \Phi^{-1}(L)(c+\epsilon_t)\\[0.2cm]
+    &amp;=&amp; \Phi^{-1}(1)c + \Phi^{-1}(L)\epsilon_t\\[0.2cm]
+    &amp;=&amp; \frac{c}{1 - \phi_1 - . . . - \phi_p} + \Phi^{-1}(L)\epsilon_t
+\end{eqnarray}
+\]</span></p>
+<p>Su valor esperado es:</p>
+<p><span class="math display">\[E(y_t) = \frac{c}{1 - \phi_1 - . . . - \phi_p}\]</span></p>
+<p>Podemos escribir el proceso <span class="math inline">\(AR(p)\)</span> en términos de desviación de la media: <span class="math inline">\(\widetilde{y} = y - \mu\)</span></p>
+<p><span class="math display">\[\widetilde{y} = \phi_1 \widetilde{y}_{t-1} + . . . + \phi_p \widetilde{y}_{t-p} + \epsilon_{t}\]</span></p>
+<p>Para obtener su varianza y autocovarianza multiplicamos la expresion anterior por <span class="math inline">\(\widetilde{y}_{t-j}\)</span> con <span class="math inline">\(j \geq 0\)</span>, y calculamos el valor esperado</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+E[\widetilde{y}\widetilde{y}_{t-j}]&amp;=&amp; E[\phi_1 \widetilde{y}_{t-1}\widetilde{y}_{t-j} + . . . + \phi_p \widetilde{y}_{t-p}\widetilde{y}_{t-j} + \epsilon_{t}\widetilde{y}_{t-j}]\\[0.2cm]
+\gamma_{j} &amp;=&amp;  \left\{\begin{array}{c}\phi_{1}\gamma_{1} + . . . + \phi_{p}\gamma_{p} + \sigma^2, \hspace{0.5cm}j=0\\\phi_{1}\gamma_{j-1} + . . . + \phi_{p}\gamma_{j-p},\hspace{0.7cm}j&gt;0\end{array}\right.
+\end{eqnarray}
+\]</span></p>
+<section id="función-de-autocorrelación-parcial-pacf" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-autocorrelación-parcial-pacf">Función de Autocorrelación Parcial (PACF)</h3>
+<p>La autocorrelación parcial mide la correlación restante entre <span class="math inline">\(y_t\)</span> y <span class="math inline">\(y_{t-1}\)</span> una vez que se ha eliminado la influencia de <span class="math inline">\(y_{t-1}, y_{t-2}, . . . , y_{t-k+1}\)</span>,</p>
+<p><span class="math display">\[
+y_t = a_1^{(1)}y_{t-1} + a_2^{(2)}y_{t-2} + . . . + a_{k-1}^{(k)}y_{t-k+1} + a_k^{(k)}y_{t-k}
+\]</span></p>
+<p>Es decir, las primeras <span class="math inline">\(m\)</span> autocorrelaciones parciales, vienen de</p>
+<p><span class="math display">\[
+\begin{eqnarray*}y_{t} &amp;=&amp; a_{(1)}^{1}y_{t-1}:\hspace{2.9cm} a_{1}^{(1)}\mbox{ Autocorrelación parcial de un rezago}\\[0.1cm]y_{t} &amp;=&amp; a_{1}^{(2)}y_{t-1} + a_{2}^{(2)}y_{t-2}:\hspace{1cm}a_{2}^{(2)}\mbox{ Segunda autocorrelación parcial}.\\[0.1cm]&amp;\vdots&amp;\\[0.1cm]y_{t} &amp;=&amp; a_{1}^{(m-1)}y_{t-1} + a_{2}^{(m-2)}y_{t-2} + . . . + a_{m-1}^{(m-1)}y_{t-m+1}\\[0.1cm]y_{t} &amp;=&amp; a_{1}^{(m)}y_{t-1} + a_{2}^{(m)}y_{t-2} + . . . + a_{m-1}^{(m)}y_{t-m+1} + a_{m}^{(m)}y_{t-m}\end{eqnarray*}
+\]</span></p>
+<p>Para encontrar el valor de <span class="math inline">\(a_k^{(k)}\)</span> basta con resolver:</p>
+<p><span class="math display">\[
+\left[\begin{array}{ccccc}1 &amp; \rho_{1} &amp; \rho_{2} &amp; \cdots &amp; \rho_{k-1} \\\rho_{1} &amp; 1 &amp; \rho_{1} &amp; \cdots &amp; \rho_{k-2} \\\rho_{2} &amp; \rho_{1} &amp; 1 &amp; \cdots &amp; \rho_{k-3} \\\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \cdots \\\rho_{k-1} &amp; \rho_{k-2} &amp; \rho_{k-3} &amp; \cdots &amp; 1\end{array}\right]\left[\begin{array}{c}a_{1}^{(1)} \\a_{2}^{(2)} \\a_{3}^{(3)} \\\vdots \\a_{k}^{(k)}\end{array}\right] = \left[\begin{array}{c}\rho_{1} \\\rho_{2} \\\rho_{3} \\\vdots \\\rho_{k}\end{array}\right]
+\]</span></p>
+<p>Denotaremos la <span class="math inline">\(k\)</span>-ésima correlación parcial <span class="math inline">\(\varphi(k)=a_{k}^{(k)}\)</span></p>
+<p>Comparando las ecuaciones del proceso <span class="math inline">\(AR(p)\)</span> y de la autocorrelación parcial <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray*}y_{t} &amp;=&amp; \phi_{1}y_{t-1} + \phi_{2}y_{t-2} + . . . + \phi_{p}y_{t-p} + \epsilon_{t}\\[0.2cm]y_{t} &amp;=&amp; a_{1}^{(k)}y_{t-1} + a_{2}^{(k)}y_{t-2}+ . . . + a_{k-1}^{(k)}y_{t-k+1} + a_{k}^{(k)}y_{t-k}\end{eqnarray*}
+\]</span></p>
+<p>Vemos que si:</p>
+<ul>
+<li><p>Si <span class="math inline">\(k = p\)</span>, entonces <span class="math inline">\(\varphi_{k} = \phi_{p}\)</span></p></li>
+<li><p>Si <span class="math inline">\(k &gt; p\)</span>, entonces <span class="math inline">\(\varphi_{k}=0\)</span></p></li>
+<li><p>Si <span class="math inline">\(k = 1\)</span>, entonces <span class="math inline">\(\varphi_{1}=\rho_{1}\)</span></p></li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
