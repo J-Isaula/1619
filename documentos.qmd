@@ -1,5 +1,5 @@
 ---
-title: "Asignaciones"
+title: "Cursos"
 #image: foto_wibsite.jpeg
 documentos:
   template: trestles
@@ -26,4 +26,12 @@ knitr::opts_chunk$set(cache=TRUE,
                       })
 ```
 
-Bienvenidos a esta sección de mi blog, en este apartado trate de publicar cada uno de los trabajos asignados al curso de Microeconomía Intermedia con `R`
+Bienvenidos a esta sección de mi blog, en este apartado trataré de publicar cada uno de los trabajos asignados a diferentes cursos.
+
+# Microeconomia 
+
+## Repaso sobre Matematicas de la Optimización 
+
+El objetivo de este repaso se centra en fundamentar las bases para la temática que conlleva el curso de microeconomia intermedia. Trataremos de recordar algunos conceptos importantes sobre *matemáticas de la optimización* .
+
+Para conocer el contendio del repaso ingresa al siguiente link [Matemáticas de la Optimización](https://j-isaula.github.io/micreoeconomics/)
