@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Juan Isaula">
+<meta name="dcterms.date" content="2023-01-25">
+
+<title>Blog-Isaula - Tópicos Actuariales con R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Blog-Isaula</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Perfil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../documentos.html">
+ <span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/J-Isaula"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isaula_juan"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#librería-lifecontingencies" id="toc-librería-lifecontingencies" class="nav-link active" data-scroll-target="#librería-lifecontingencies">Librería lifecontingencies</a></li>
+  <li><a href="#anualidades" id="toc-anualidades" class="nav-link" data-scroll-target="#anualidades">Anualidades</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-anualidades" id="toc-tipos-de-anualidades" class="nav-link" data-scroll-target="#tipos-de-anualidades">Tipos de Anualidades</a>
+  <ul class="collapse">
+  <li><a href="#anualidades-vencidas" id="toc-anualidades-vencidas" class="nav-link" data-scroll-target="#anualidades-vencidas">Anualidades Vencidas</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tópicos Actuariales con R</h1>
+<p class="subtitle lead">Anualidades</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Actuary</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Juan Isaula </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 25, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Si te dedicas a trabajar en el ambito de Ciencias Actuariales o Matemáticas Financiera, en este post, te comparto una de las librerias que fue publicada recientemente por <em>Giorgio Alfredo Spedicato</em>, la cual te ayudará mucho si quieres introducir tus computos o estimaciones al ecosistema de <code>R</code> y <code>RStudio</code>. Su autor se otorgo el nombre de <code>lifecontingencies</code>. A continuación conozcamos un poco de ella.</p>
+<section id="librería-lifecontingencies" class="level1">
+<h1>Librería lifecontingencies</h1>
+<p>En la actualidad el conocimiento sobre el uso de <code>R</code>, es muy demandado en los profesionales que requieren las empresas, siendo este un <em>software</em> libre especializado en estadística, con gran capacidad gracias al uso de complementos adicionalesm llamadas <em>librerías</em>, que al ser instaladas potencian las capacidades para desarrollar procedimientos especializados y que hacen de <em>R Project</em> un potente programa para el uso de diferentes ramas de la ciencia actuarial.</p>
+<p>Como ya he mencionado es esencial la descarga de librerías que incrementan las funciones de <code>R</code>, en el caso de Cálculo Actuarial, la librería utilizada se llama <code>lifecontingencies</code>(Spedicato 2013).</p>
+<p>Gracias a lo investigado por <em>Giorgio Spedicato</em> creador de la librería <code>lifecontingencies</code> y presentado en el paper <a href="https://cran.r-project.org/web/packages/lifecontingencies/vignettes/an_introduction_to_lifecontingencies_package.pdf">“The lifecontingencies Package: Performing financial and Actuarial Mathematics Calculations in R”</a> (Spedicato, 2013, p.1-2), encontramos lo siguiente.</p>
+<p>El entorno de programación estadística en <code>R</code> se ha convertido en el principal <em>software</em> de referencia para académicos, incluso en los negocios, <code>R</code> ahora se considera una alternativa válida a los paquetes estadísticos comerciales más importantes como por ejemplo:</p>
+<ul>
+<li><p>SAS (SAS Institute Inc., 2011)</p></li>
+<li><p>MATLA (The MathWorks, Inc., 2011)</p></li>
+<li><p>SPSS (IBM Corp, 2012)</p></li>
+</ul>
+<p>Algunos paquetes para aplicaciones actuariales se han desarrollado dentro de <code>R</code>. Sin embargo, la mayoría de ellos se centran principalmente en seguros de no vida, los principales son:</p>
+<ul>
+<li><p><code>actuar</code> (Dutang, Goulet, y Pigeon, 2008): este paquete representa el lado computacional de la metodología actuarial clásica sobre la distribución de pérdidas.</p></li>
+<li><p><code>ChainLadder</code> (Gesmann y Zhang, 2011): proporciona funciones que son capaces de estimar reservas de pérdidas para el seguro de no vida y de modelos lineales generalizados (GLM), ampliamente utilizados en las decisiones para la tasa del seguro, por funciones agrupadas dentro de la base de distribuciones de <code>R.</code></p></li>
+</ul>
+<p>El trabajo actuarial sobre seguros de vida se ocupa principalmente de datos demográficos y financieros.</p>
+<p>El <code>CRAN</code> enumera varios paquetes especializados para el análisis financiero entre los que encontramos <em>YielCurve</em> (Guirreri, 2010) y <em>termstrc</em> (Ferstl y Hayden, 2010) los cuales son capaces de realizar modelos financieros con tasas de interés. Entre los pocos paquetes que manejan datos demográficos, estan <em>demografy</em> (Hyndman, Booth, Ticke y Maindonald, 2011) y <em>LifeTables</em> (Riffe, 2011) pueden utilizarse para gestionar las proyecciones demográficas.</p>
+<p>Por otra parte, muchos paquetes de software comerciales adaptados especificamente para el análisis de los seguros de vida ya están disponibles son: <em>MoSes</em> (Tower Watson,2011) y <em>Prophet</em> (SunGard, 2012) son actualmente los principales paquetes de software actuarial para el modelado de los seguros de vida.</p>
+<p>El paquete <code>lifecontingencies</code> aparece como el primer paquete de <code>R,</code> para realizar cálculos de matemáticas contingentes de vida. Apunta a representar al compañero computacional para resoler conceptos teóricos expuestos en libros de texto como el clásico <em>Bowser</em> (Bowers, Jones, Gerber, Nesbitt, y Hickman, 1997), para la evaluación de matemáticas actuariales y <em>Broverman</em> (Broverman, 2008) para las matemáticas financieras.</p>
+<p>El uso de la librería <code>lifecontingencies</code> en este post, se utilizara para temas planteados con contingencias relacionadas a una sola persona, sin embargo, el lector ya con una idea más clara y con conocimientos sobre esta librería, podrá abordar las funciones para resolver problemas de contingencias para el caso de N personas los cuales posiblemente la oborde en otro post sobre <em>Calculo Actuarial Avanzado</em>.</p>
+<p><strong>Nota:</strong> En todo problema que realizaremos es muy importante que realices tus propios calculos para que compruebes cómo se llegó al resultado.</p>
+</section>
+<section id="anualidades" class="level1">
+<h1>Anualidades</h1>
+<p>Una anualidad es una serie de pagos iguales realizados en intervalos de tiempo regulares, durante un tiempo determinado. A los Intervalos de tiempo iguales entre pago y pago se les llama periodo de pago y al periodo de tiempo específico durante el cual se realizan los pagos se le conoce como plazo o término de la anualidad.</p>
+<section id="tipos-de-anualidades" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-anualidades">Tipos de Anualidades</h2>
+<p>Los factores que intervienen en las anualidades y su forma de pago hacen que se puedan clasificar de diferente forma, sin embargo, eso no significa que sean mutuamente excluyentes. Las anualidades se pueden clasificar bajo cuatro criterios importantes; <em>tiempo</em>, <em>intereses</em>, <em>pago o iniciación.</em></p>
+<section id="anualidades-vencidas" class="level3">
+<h3 class="anchored" data-anchor-id="anualidades-vencidas">Anualidades Vencidas</h3>
+<p>Una anualidad vencida es una serie de pagos iguales realizados al final de cada periodo de pago, un ejemplo de ellas es cuando hacemos el pago mensual de alguna tarjeta de crédito o el pago mensual de una cuenta de ahorro.</p>
+<section id="valor-presente-de-una-anualidad-vencida" class="level4">
+<h4 class="anchored" data-anchor-id="valor-presente-de-una-anualidad-vencida">Valor Presente de una anualidad Vencida</h4>
+<p>A continuación se muestra la fórmula para el cálculo del valor presente de una anualidad vencida.</p>
+<p>Se supone una anualidad vencidad donde <span class="math inline">\(R\)</span> es el pago de la anualidad al final de cada periodo de pago en un plazo de <span class="math inline">\(n\)</span> periodos.</p>
+<p><img src="im1.PNG" class="img-fluid"></p>
+<p>la fecha focal se localiza en el momento actual, y la letra <span class="math inline">\(A\)</span> representa el valor actual de la anualidad. La expresión es la siguiente:</p>
+<p><span class="math display">\[A = R(1+i)^{-1} + R(1+i)^{-2} + . . . + R(1+i)^{-(n-2)} + R(1+i)^{-(n-1)} + R(1+i)^{-n}\]</span></p>
+<p>haciendo <span class="math inline">\((1+i)^{-1} = v\)</span></p>
+<p><span class="math display">\[
+\begin{eqnarray}
+A &amp;=&amp; Rv + Rv^2 + . . . + R^{n-2} + Rv^{n-1} + Rv^n\\[0.2cm]
+A &amp;=&amp; R(v + v^2 + . . . + v^{n-2} + v^{n-1} + v^n)
+\end{eqnarray}
+\]</span></p>
+<p>Claramente es una suma de progresión geométrica decreciente, entonces</p>
+<p><span class="math display">\[
+A = R\frac{v(1-v^n)}{1-v}
+\]</span></p>
+<p>El denominador es igual a:</p>
+<p><span class="math display">\[
+1 - v = 1 - \frac{1}{1+i} = \frac{1+i-1}{1+i} = i\frac{1}{1+i} = iv
+\]</span></p>
+<p>por tanto,</p>
+<p><span class="math display">\[
+A = R\frac{1-(1+i)^{-n}}{i}
+\]</span></p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="Isaula/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
