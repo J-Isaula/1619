@@ -7,6 +7,17 @@ categories: [Economía, Microeconomía, R, RStudio]
 image: "thumbnail.jpg"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE,
+                      message=FALSE, warning=FALSE,
+                      fig.path='figs/',
+                      cache.path = '_cache/',
+                      fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      })
+```
+
 # Las Preferencias del Consumidor
 
 Una forma de iniciar el análisis de los individuos es plantear un conjunto básico de postulados, o axiomas, que describen el comportamiento racional del mismo. Supondremos que dadas tres canastas de consumo cualesquiera $(x_1,x_2)$, $(y_1,y_2)$ y $(z_1,z_2)$. El consumidor puede ordenarlas según su atractivo. Es decir, puede decidir que una de ellas es estrictamente mejor que la otra o bien que le son indiferentes.
