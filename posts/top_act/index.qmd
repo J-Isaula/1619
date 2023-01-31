@@ -54,7 +54,7 @@ El uso de la librería `lifecontingencies` en este post, se utilizara para temas
 
 **Nota:** En todo problema que realizaremos es muy importante que realices tus propios calculos para que compruebes cómo se llegó al resultado.
 
-# Anualidades 
+# Anualidades
 
 Las anualidades representan el grupo más importante de aplicaciones de las matemáticas financieras, ya que la gran mayoría de las operaciones de crédito, tanto comerciales como puramente financieras, se pactan estableciendo una serie de pagos periódicos que habrán de realizarse durante su vigencia.
 
@@ -62,7 +62,7 @@ Una ***anualidad*** es una serie de pagos iguales realizados en intervalos de ti
 
 Trataremos de simular algunos tipos de anualidades en `R`.
 
-### Anualidades Vencidas 
+### Anualidades Vencidas
 
 Una anualidad vencida es una serie de pagos iguales realizados al final de cada periodo de pago, un ejemplo de ellas es cuando hacemos el pago mensual de alguna tarjeta de crédito o el pago mensual de una cuenta de ahorro.
 
@@ -72,7 +72,7 @@ A continuación se muestra el diagrama de tiempo de dichas anualidades.
 
 El número cero representa el momento actual o el tiempo presente. El número uno representa el final del primer periodo y coincide con el inicio del segundo periodo. La letra $R$ representa la anualidad y los intereses que pagan son intereses compuestos por lo tanto son capitalizable.
 
-#### Valor presente de una anualidad vencida 
+#### Valor presente de una anualidad vencida
 
 Se supone una anualidad vencida donde $R$ es el pago de la anualidad al final de cada periodo de pago en un plazo de $n$ periodos
 
@@ -146,7 +146,7 @@ En las anualidades anticipadas se hacen los pagos al inicio de cada periodo. Una
 
 El tiempo cero representa el tiempo presente y coincide con el primer pago de la anualidad. El número uno representa el final del primer periodo y coincide con el deposito del segundo periodo y así sucesivamente.
 
-#### Valor Presente de una anualidad anticipada 
+#### Valor Presente de una anualidad anticipada
 
 Es la cantidad de dinero en el tiempo presente que tenemos que invertir para hacer cierto número de retiros esperados en el futuro.
 
@@ -160,7 +160,7 @@ $$
 \ddot{A} = R\frac{1 - (1+i)^{-(n-1)}}{i} + R
 $$
 
-#### Valor futuro de una anualidad anticipada 
+#### Valor futuro de una anualidad anticipada
 
 Para deducir la fórmula del valor futuro de una anualidad anticipada, se expone el siguiente diagrama de tiempo
 
@@ -215,7 +215,7 @@ donde,
 
 -   `type` Una cadena, ya sea, *"inmediate"* o *"due".* Si los pagos se realizan al final de cada período de $n$ períodos tenemos una *"annuity-immediate"*. De lo contrario, si los pagos se realizan al comienzo de cada periodo, tenemos una *"annuity-due".*
 
-### Ejemplos 
+### Ejemplos
 
 Calcular el valor presente de cuatro pagos anuales de $\$500.00$, el primero de ellos se efectua un año después de este momento y la tasa es del $8\%$ anual efectiva.
 

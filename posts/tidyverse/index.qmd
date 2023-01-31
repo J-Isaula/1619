@@ -2,9 +2,9 @@
 title: "Machine Learning en Tidyverse"
 subtitle: "Múltiples Modulos con broom"
 author: "Juan Isaula"
-date: "2022-09-30"
+date: "2023-01-21"
 categories: [Machine Learning, Forecasting, R, RStudio, broom]
-image: "fondo_3.PNG"
+image: "image.jpg"
 ---
 
 ```{r setup, include = FALSE}
@@ -106,7 +106,7 @@ model_perf
 
 Si observamos los valores de $R^2$ de los primeros 5 modelos notamos que tienen un $R^2$ alto, lo que nos dice que los modelos para estos países se han ajustado bien a los datos de esos países en particular.
 
-### Modelos con Mejor y Peor Ajuste 
+### Modelos con Mejor y Peor Ajuste
 
 Siendo un poco más curiosos, tratemos de explorar el ajuste de los modelos. Para ver esto, podemos filtrar los valores más alto de `r.squared`, tomaremos como un r.squared alto 0.995 en adelante.
 
@@ -172,7 +172,7 @@ augment_models %>% filter(country == "Ukraine") %>%
 
 Como pudo ver en estos dos ejemplos, `augment()` y `ggplot()` facilitan la exploración visual del ajuste de un modelo.
 
-### Visualización de Peores y Mejores modelos 
+### Visualización de Peores y Mejores modelos
 
 En este caso, prepararemos los cuatro mejores modelos que consideramos anteriormente y los peores y los visualizaremos,
 
@@ -208,7 +208,7 @@ peores_augment %>%
 
 Parcelas geniales! Puede ver que un modelo lineal hace un gran trabajo para los mejores 3 modelos de ajuste, pero los peores modelos de ajuste no parecen tener una relación lineal. Trabajaremos para mejorar este ajuste en la proxima serie de ejercicios mediante la incorporación de funciones adicionales.
 
-### Mejores al Ajuste del Modelo 
+### Mejores al Ajuste del Modelo
 
 Con la información que reunimos con Augment() y glance(), aprendimos que algunos de los modelos de regresión lineal simple no se ajustan adecuadamente a las tendencias subyacentes de nuestros datos. Para separar esto emplearemos un modelo de ***regresión múltiple.***
 
@@ -230,7 +230,7 @@ Recuerde que `r.squared` mide la variación explicada por el modelo. Agregar cua
 
 La interpretación del `adj.r.squared` es muy similar al `r.squared` y lo usaremos para evaluar el ajuste de nuestros modelos y compararlos con los modelos lineales simples creados anteriormente.
 
-### Construir Mejores Modelos 
+### Construir Mejores Modelos
 
 Anteriormente, creamos una colección de modelos simples para ajustarse a la expectativa de vida usando la característica de año. Su análisis anterior mostro que algunos de estos modelos no encajaban muy bien.
 
