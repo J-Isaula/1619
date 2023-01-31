@@ -28,7 +28,7 @@ knitr::opts_chunk$set(cache=TRUE,
 
 Bienvenidos a esta sección de mi blog, en este apartado trataré de publicar cada uno de los trabajos asignados a diferentes cursos.
 
-# Microeconomia
+# Microeconomía
 
 ## Repaso sobre Matematicas de la Optimización
 
