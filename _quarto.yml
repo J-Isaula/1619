@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Blog-Isaula"
+  site-url: https://j-isaula.github.io/1619/
   navbar:
     right:
       - about.qmd
