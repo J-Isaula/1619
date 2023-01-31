@@ -344,7 +344,7 @@ S = R\frac{r^n - 1}{r - 1} &amp;=&amp; R\frac{(1+i)^n - 1}{1 + i -1}\\[0.2cm]
 <section id="función-annuity" class="level5">
 <h5 class="anchored" data-anchor-id="función-annuity"><strong><em>Función annuity</em></strong></h5>
 <p>En <code>R</code> la función <code>annuity</code> calcula el valor presente de una anualidad.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-1_2d0f853430e384314de80bb5c749d498">
+<div class="cell" data-hash="_cache/unnamed-chunk-1_bc38db7a9be997fc8d6e71b4f3062ea6">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">annuity</span>(i, n, <span class="at">m =</span> <span class="dv">0</span>, <span class="at">k =</span> <span class="dv">1</span>, <span class="at">type =</span> <span class="st">"inmediate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>donde los parámetros:</p>
@@ -359,7 +359,7 @@ S = R\frac{r^n - 1}{r - 1} &amp;=&amp; R\frac{(1+i)^n - 1}{1 + i -1}\\[0.2cm]
 <section id="función-accumulatedvalue" class="level5">
 <h5 class="anchored" data-anchor-id="función-accumulatedvalue"><strong><em>Función accumulatedValue</em></strong></h5>
 <p>En <code>R</code> la función <code>accumulatedValue</code> calcule el valor futuro de una anualidad.</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-2_5148a75fa3a52b98e6f0a0c80b8fff6c">
+<div class="cell" data-hash="_cache/unnamed-chunk-2_d4fef8a30b8f75ff123b7d7618157609">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">accumulatedValue</span>(i, n, <span class="at">m =</span> <span class="dv">0</span>, k, <span class="at">type =</span> <span class="st">"immediate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>donde,</p>
@@ -388,7 +388,7 @@ A &amp;=&amp; R\frac{1 - (1+i)^{-n}}{i}\\[0.2cm]
 \end{eqnarray}
 \]</span></p>
 <p>Usando <code>R</code></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-3_e6aa7ea90ddbd2c83fed6a13840eb1c8">
+<div class="cell" data-hash="_cache/unnamed-chunk-3_ecfbadbc3182da66a12136774305b39f">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lifecontingencies)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">500</span><span class="sc">*</span><span class="fu">annuity</span>(<span class="at">i =</span> <span class="fl">0.08</span>, <span class="at">n =</span> <span class="dv">4</span>, <span class="at">type =</span> <span class="st">"immediate"</span>)</span>
@@ -409,7 +409,7 @@ A &amp;=&amp; R\frac{1 - (1+i)^{-n}}{i}\\[0.2cm]
 \end{eqnarray}
 \]</span></p>
 <p>ahora, resolvamos con <code>R</code></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-4_7ffd75821d729c9e8aa3d91d1199e997">
+<div class="cell" data-hash="_cache/unnamed-chunk-4_46d455cc6242b338e9f517324415e24d">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span><span class="fu">annuity</span>(<span class="at">i =</span> <span class="fl">0.09</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">type =</span> <span class="st">"immediate"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -424,7 +424,7 @@ A &amp;=&amp; R\frac{1 - (1+i)^{-n}}{i}\\[0.2cm]
 A = 8000\frac{1 - (1+0.15)^{-4}}{0.15} + 8000 = \fbox{30839.83}
 \]</span></p>
 <p>ahora usando <code>R</code> obtenemos:</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-5_755edb6090f78130ed5ad3d2562d7c42">
+<div class="cell" data-hash="_cache/unnamed-chunk-5_37cf13ecfd0c1d14ed982a20d30f8b63">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8000</span><span class="sc">*</span><span class="fu">annuity</span>(<span class="at">i =</span> <span class="fl">0.15</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">type =</span> <span class="st">"due"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30839.83</code></pre>
@@ -438,7 +438,7 @@ A = 8000\frac{1 - (1+0.15)^{-4}}{0.15} + 8000 = \fbox{30839.83}
 \ddot{S} = 1200\frac{(1+0.05)^{10} - 1}{0.05}\cdot(1+0.05) = \fbox{15848.14}
 \]</span></p>
 <p>En <code>R</code> esto sería</p>
-<div class="cell" data-hash="_cache/unnamed-chunk-6_d6030af7813a38daf42008b21902a3d1">
+<div class="cell" data-hash="_cache/unnamed-chunk-6_d2b4735c6df92fea35a3fbf68f28d065">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1200</span><span class="sc">*</span><span class="fu">accumulatedValue</span>(<span class="at">i =</span> <span class="fl">0.05</span>, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">type =</span> <span class="st">"due"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15848.14</code></pre>
@@ -457,7 +457,7 @@ R &amp;=&amp; \frac{S}{\frac{(1+i)^n - 1}{i}} \\[0.2cm]
 \end{eqnarray}
 \]</span></p>
 <p>En <code>R</code></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-7_69700c7da3edfd0347aa4154951068d9">
+<div class="cell" data-hash="_cache/unnamed-chunk-7_185dfdbef11cc53b094260f5d08ff610">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">180000</span><span class="sc">/</span><span class="fu">accumulatedValue</span>(<span class="at">i =</span> <span class="fl">0.05</span>, <span class="at">n =</span> <span class="dv">12</span>, <span class="at">type =</span> <span class="st">"immediate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11308.57</code></pre>
@@ -467,7 +467,7 @@ R &amp;=&amp; \frac{S}{\frac{(1+i)^n - 1}{i}} \\[0.2cm]
 <p><span class="math display">\[
 \mbox{Solución}
 \]</span></p>
-<div class="cell" data-hash="_cache/unnamed-chunk-8_7ac7e7cc6e3d3dd69ad4e91dafcbdaf6">
+<div class="cell" data-hash="_cache/unnamed-chunk-8_88979a06c54ff31e5e2c25667295b44a">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4240</span><span class="sc">*</span><span class="fu">annuity</span>(<span class="at">i =</span> <span class="fl">0.015</span>, <span class="at">n =</span> <span class="dv">24</span>, <span class="at">m =</span> <span class="dv">4</span>,  <span class="at">type =</span> <span class="st">"immediate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 80018.69</code></pre>
