@@ -9,6 +9,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/top_act/index.html",
       "/posts/tidyverse/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html",
