@@ -333,3 +333,102 @@ fig <- fig %>% animation_button(
 fig
 
 ```
+
+## Tasa Marginal de Sustitución (TMS) 
+
+Otro concepto importante en la teoría del consumidor es la Tasa Marginal de Sustitución (TMS). Matemáticamente esto es la pendiente de la curva de indiferencia, sin embargo, en términos microecnómicos esta pendiente se refiere a la relación de cambio entre un bien $x$ y el bien $y$, es decir, cuanto del *bien x* se tiene que sacrificar (aumentar) para aumentar (disminuir) el consumo del *bien y* para aumentarse en el mismo nivel de utilidad.
+
+En términos matemáticos la TMS se define como:
+
+$$
+TMS = -\left.\begin{array}{c}\frac{dy}{dx} \end{array}\right|_{U = U_1}
+$$
+
+donde la notación indica que la pendiente se debe calcular a lo largo de la cuva de indiferencia $U_1$.
+
+Un ejercicio interesante para el lector, seria intentar probar la identidad de $TMS$ que acabamos de definir.
+
+### Múltiples Curvas de Indiferencia 
+
+Hay una curva de indiferencia que pasa por cada punto del plano $xy$. Cada una de estas curvas muestra combinaciones de $x$ y $y$ que proporcionan al individuo determinado nivel de satisfación como se vio en graficos anteriores. Los movimientos en dirección noreste representan movimientos hacia niveles más altos de satisfación.
+
+![El cambio de la pendiente a lo largo de U1 muestra que la canasta de consumo disponible afecta los intercambios que esta persona realizará libremente](TMS2.PNG)
+
+Dado que ya conocemos en que consiste la TMS, y a este punto asumo que el lector ya tiene idea de como realizar el computo manual de la TMS para una función de utilidad dada. Entonces, procederemos a realizar el computo de la TMS en `R`, para el computo se procederá a crear una función que resuelva el problema más rapidamente, ya que como usted se ha podido dar cuenta se necesita y usar calculo diferencial (derivadas).
+
+La función que crearemos para realizar el computo de la TMS la llamaremos `TMS`, veamos como hacerlo en `R`.
+
+```{r}
+TMS <- function(fun.utilidad, bien_x) {
+  U  <- parse(text = fun.utilidad)
+  v1 <- D(U, "x")                       # D() función que realiza la derivada de U
+  print(paste("TMS = ", 
+              eval(v1, envir = list(x = bien_x)), "considerando", 
+              bien_x, "unidades del bien x"))
+}
+```
+
+Del bloque de código previo:
+
+-   `TMS:` función que calcula la tasa marginal de sustitución.
+
+-   fun.utilidad: función de la curva de indiferencia *(y en función de x). Tiene que especificarse en caracteres.*
+
+-   `bien_x:` unidades del bien *x* en donde se evaluara la TMS.
+
+### Ejemplo 
+
+consideremos la siguiente función de utilidad con su respectivo nivel de utilidad
+
+$$
+U(x,y) = 10 = \sqrt{xy} 
+$$
+
+Si calculamos la TMS de esta curva de indiferencia de manera manual tendremos:
+
+$$
+TMS = -\frac{\frac{\partial U}{\partial x}}{\frac{\partial U}{\partial y}} = -\frac{100}{x^2}
+$$
+
+Como se puede dar cuenta la TMS depende de *"x"*, lo que indica que tenemos que variar *"x"* positiva o negativamente , con el fin de obtener menos o más de *"y"* y mantenernos en la misma utilidad de 10.
+
+Si evaluamos la TMS cuando el bien "x" es igual a 5, entonces, la TMS sera de
+
+$$
+TMS = -\frac{100}{5^2} = -4
+$$
+
+Esto implica, que si aumentamos el consumo del *bien "x"* en 1 tendremos que disminuir el consumo del *bien y* en 4. Veamos este ejemplo en `R`.
+
+```{r}
+# bien_x = 5
+# Utilizamos la función TMS que creamos previamente 
+
+TMS(fun.utilidad = "100/x", 5)
+```
+
+Note que el resultado es el deseado. Pero si queremos ver como varía la TMS para distintas cantidades del bien "x", podemos hacer pequeñas variaciones a la función (TMS) que definimos en el primer bloque de código de esta sección.
+
+```{r}
+Var_TMS <- function(fun.utilidad, bien_x){
+  U  <- parse(text = fun.utilidad)
+  v1 <- D(U, "x")
+  eval(v1, envir = list(x = bien_x))
+}
+```
+
+```{r}
+# Veamos el comportamiento de la TMS cuando variamos el bien x
+
+w <- c()
+for (i in seq(60, 10, -10)){
+  t <- Var_TMS(fun.utilidad = "100/x",i)
+  w <- c(w,t)
+}
+
+w
+```
+
+Veamos que a medida que el *bien x* pasa de ser abundante a ser un bien escazo cada vez le resulta al consumidor más relevante y si desea obtener una unidad adicional del *bien x* tendrá que renunciar a más cantidad del *bien y.* Es así que si el consumidor tiene solo un bien, cambiará este bien siempre y cuando reciba cien unidades del *bien y*.
+
+En la siguiente sección de este post verá el tema de maximización de la utilidad dado una restricción presupuestaria. Es decir, desarrollamaremos el cálculo óptimo de los bienes, que maximizan la función de utilidad.
