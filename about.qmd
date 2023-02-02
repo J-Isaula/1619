@@ -21,7 +21,13 @@ Licenciado en Matemáticas con orientación en Estadística, Data Scientist y ca
 
 En este blog comparto y enseño todo lo que aprendo.
 
-**Campos de Interés y Trabajos Realizados**
+### **App Shiny/Dashboards**
+
+[GeoRGe](https://juanisaula.shinyapps.io/GeorGE/?_ga=2.82240022.1240928687.1675353549-1442211681.1673756750)
+
+Es una App que elabore en el lenguaje de programación `R`, utilizando los paquetes `shiny` \| `shinydashboard` \| `DT` \| `tidyverse` \| `shinyWidgets` \| `fresh`. En la actualidad es utilizada en el *Instituto Hondureño de Seguridad Social (IHSS).*
+
+### **Campos de Interés y Trabajos Realizados**
 
 [Black box models for forecasting financial time series](https://github.com/J-Isaula/Modelos-de-Caja-Negra)
 
