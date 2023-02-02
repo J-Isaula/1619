@@ -1,6 +1,6 @@
 ---
 title: "Perfil"
-image: foto_wibsite.jpeg
+image: perfil.jpeg
 about:
   template: trestles
   links:
