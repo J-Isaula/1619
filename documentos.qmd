@@ -38,8 +38,12 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Ejercicios de repaso sobre derivadas](https://drive.google.com/file/d/1mDlg8o0JfWeHp_a5NMdDIvEU_FX6BeDR/view?usp=sharing)
 
+## Videos sobre R
+
 -   [Video Introducción a R](https://youtu.be/8Z54mDisr_A)
 
-## Ejercicios a resolver del primer modulo 
+-   [Creación y Operación de Vectores en R](https://youtu.be/UMSp1Vy-sE8)
+
+## Ejercicios a resolver del primer modulo
 
 -   [Guia de ejercicios \# 1](https://rpubs.com/Juan-Isaula/997787)
