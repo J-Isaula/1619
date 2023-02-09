@@ -50,7 +50,7 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 ## Ejercicios a resolver del primer modulo
 
--   [Guia de ejercicios \# 1](https://rpubs.com/Juan-Isaula/997787)
+-   [Guia de ejercicios \# 1](https://rpubs.com/Juan-Isaula/1000971)
 
 ## Libros Recomendados
 
