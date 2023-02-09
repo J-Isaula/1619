@@ -38,12 +38,20 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Ejercicios de repaso sobre derivadas](https://drive.google.com/file/d/1mDlg8o0JfWeHp_a5NMdDIvEU_FX6BeDR/view?usp=sharing)
 
+-   [Funcion de utilidad indirecta y función del gasto](https://rpubs.com/Juan-Isaula/1000910)
+
 ## Videos sobre R
 
 -   [Video Introducción a R](https://youtu.be/8Z54mDisr_A)
 
 -   [Creación y Operación de Vectores en R](https://youtu.be/UMSp1Vy-sE8)
 
+-   [Matrices y DataFrame en R](https://youtu.be/r5-8gDUh_XU)
+
 ## Ejercicios a resolver del primer modulo
 
 -   [Guia de ejercicios \# 1](https://rpubs.com/Juan-Isaula/997787)
+
+## Libros Recomendados
+
+[Advanced Microeconomic Theory, Geoffrey A. Jehle Philip J.Reny](http://zalamsyah.staff.unja.ac.id/wp-content/uploads/sites/286/2019/11/1-Advanced-Microeconomic-Theory-3rd-Ed.-JEHLE-RENY.pdf)
