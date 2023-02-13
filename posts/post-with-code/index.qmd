@@ -334,7 +334,7 @@ fig
 
 ```
 
-## Tasa Marginal de Sustitución (TMS) 
+## Tasa Marginal de Sustitución (TMS)
 
 Otro concepto importante en la teoría del consumidor es la Tasa Marginal de Sustitución (TMS). Matemáticamente esto es la pendiente de la curva de indiferencia, sin embargo, en términos microecnómicos esta pendiente se refiere a la relación de cambio entre un bien $x$ y el bien $y$, es decir, cuanto del *bien x* se tiene que sacrificar (aumentar) para aumentar (disminuir) el consumo del *bien y* para aumentarse en el mismo nivel de utilidad.
 
@@ -348,7 +348,7 @@ donde la notación indica que la pendiente se debe calcular a lo largo de la cuv
 
 Un ejercicio interesante para el lector, seria intentar probar la identidad de $TMS$ que acabamos de definir.
 
-### Múltiples Curvas de Indiferencia 
+### Múltiples Curvas de Indiferencia
 
 Hay una curva de indiferencia que pasa por cada punto del plano $xy$. Cada una de estas curvas muestra combinaciones de $x$ y $y$ que proporcionan al individuo determinado nivel de satisfación como se vio en graficos anteriores. Los movimientos en dirección noreste representan movimientos hacia niveles más altos de satisfación.
 
@@ -376,7 +376,7 @@ Del bloque de código previo:
 
 -   `bien_x:` unidades del bien *x* en donde se evaluara la TMS.
 
-### Ejemplo 
+### Ejemplo
 
 consideremos la siguiente función de utilidad con su respectivo nivel de utilidad
 
