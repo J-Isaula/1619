@@ -15,43 +15,36 @@ documentos:
       href: https://github.com/J-Isaula
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(cache=TRUE,
-                      message=FALSE, warning=FALSE,
-                      fig.path='figs/',
-                      cache.path = '_cache/',
-                      fig.process = function(x) {
-                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
-                      if (file.rename(x, x2)) x2 else x
-                      })
-```
-
 Bienvenidos a esta sección de mi blog, en este apartado trataré de publicar cada uno de los trabajos asignados a diferentes cursos.
 
 # Microeconomía
 
-## Repaso sobre Matematicas de la Optimización
+El objetivo de este repaso se centra en fundamentar las bases para la temática que conlleva el curso de microeconomia intermedia. Trataremos de recordar algunos conceptos importantes sobre \*matemáticas de la optimización\* .
 
-El objetivo de este repaso se centra en fundamentar las bases para la temática que conlleva el curso de microeconomia intermedia. Trataremos de recordar algunos conceptos importantes sobre *matemáticas de la optimización* .
-
--   Para conocer el contendio del repaso ingresa al siguiente link [Matemáticas de la Optimización](https://j-isaula.github.io/micreoeconomics/)
+-   [Repaso Matemáticas de la Optimización](https://j-isaula.github.io/micreoeconomics/)
 
 -   [Ejercicios de repaso sobre derivadas](https://drive.google.com/file/d/1mDlg8o0JfWeHp_a5NMdDIvEU_FX6BeDR/view?usp=sharing)
 
--   [Funcion de utilidad indirecta y función del gasto](https://rpubs.com/Juan-Isaula/1000910)
+-   [Función de utilidad indirecta y función del gasto](https://rpubs.com/Juan-Isaula/1000910)
 
-## Videos sobre R
+-   [Teoria del Productor](https://rpubs.com/Juan-Isaula/1010886)
 
--   [Video Introducción a R](https://youtu.be/8Z54mDisr_A)
+## Videos Sobre R
 
--   [Creación y Operación de Vectores en R](https://youtu.be/UMSp1Vy-sE8)
+-   [Introducción a R](https://youtu.be/8Z54mDisr_A)
+
+-   [Creación y Operaciones con Vectores en R](https://youtu.be/UMSp1Vy-sE8)
 
 -   [Matrices y DataFrame en R](https://youtu.be/r5-8gDUh_XU)
 
-## Ejercicios a resolver del primer modulo
+-   [Creación de Funciones en R](https://youtu.be/s6UvOCMKkPY)
 
--   [Guia de ejercicios \# 1](https://rpubs.com/Juan-Isaula/1000971)
+## Ejercicios a Resolver Primer Modulo 
+
+[Guía de Ejercicios #1](https://rpubs.com/Juan-Isaula/1000971)
 
 ## Libros Recomendados
 
-[Advanced Microeconomic Theory, Geoffrey A. Jehle Philip J.Reny](http://zalamsyah.staff.unja.ac.id/wp-content/uploads/sites/286/2019/11/1-Advanced-Microeconomic-Theory-3rd-Ed.-JEHLE-RENY.pdf)
+-   [Advanced Microeconomic Theory, Geoffrey A. Jehle Philip J.Reny](http://zalamsyah.staff.unja.ac.id/wp-content/uploads/sites/286/2019/11/1-Advanced-Microeconomic-Theory-3rd-Ed.-JEHLE-RENY.pdf)
+
+-   [Teoría Microeconómica (Principios básicos y ampliaciones)](https://elvisjgblog.files.wordpress.com/2019/04/teorc3ada-microeconc3b3mica-9c2b0-edicic3b3n-walter-nicholson.pdf)
