@@ -39,7 +39,9 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Creación de Funciones en R](https://youtu.be/s6UvOCMKkPY)
 
-## Ejercicios a Resolver Primer Modulo 
+-   [Introducción a Teoría del Productor](https://youtu.be/j_sTSx0FjBc)
+
+## Ejercicios a Resolver Primer Modulo
 
 [Guía de Ejercicios #1](https://rpubs.com/Juan-Isaula/1000971)
 
