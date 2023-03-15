@@ -43,7 +43,9 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 ## Ejercicios a Resolver Primer Modulo
 
-[Guía de Ejercicios #1](https://rpubs.com/Juan-Isaula/1000971)
+-   [Guía de Ejercicios #1](https://rpubs.com/Juan-Isaula/1000971)
+
+-   [Guía de Ejercicios #2](https://rpubs.com/Juan-Isaula/1015800)
 
 ## Libros Recomendados
 
