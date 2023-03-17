@@ -27,9 +27,7 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Función de utilidad indirecta y función del gasto](https://rpubs.com/Juan-Isaula/1000910)
 
--   [Teoria del Productor](https://rpubs.com/Juan-Isaula/1010886)
-
-## Videos Sobre R
+## Videos 
 
 -   [Introducción a R](https://youtu.be/8Z54mDisr_A)
 
@@ -40,6 +38,8 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 -   [Creación de Funciones en R](https://youtu.be/s6UvOCMKkPY)
 
 -   [Introducción a Teoría del Productor](https://youtu.be/j_sTSx0FjBc)
+
+-   [Explicación de Ejercicio](https://youtu.be/OyFOPktSMiA)
 
 ## Ejercicios a Resolver Primer Modulo
 
