@@ -27,7 +27,7 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Función de utilidad indirecta y función del gasto](https://rpubs.com/Juan-Isaula/1000910)
 
-## Videos 
+## Videos
 
 -   [Introducción a R](https://youtu.be/8Z54mDisr_A)
 
@@ -41,11 +41,17 @@ El objetivo de este repaso se centra en fundamentar las bases para la temática 
 
 -   [Explicación de Ejercicio](https://youtu.be/OyFOPktSMiA)
 
+-   [Introducción a Estructuras de Mercado](https://youtu.be/-5iQmcg7UFc)
+
+-   [Ejercicio mercado en competencia perfecta](https://youtu.be/tzcNh1Cc4ZM)
+
 ## Ejercicios a Resolver Primer Modulo
 
 -   [Guía de Ejercicios #1](https://rpubs.com/Juan-Isaula/1000971)
 
 -   [Guía de Ejercicios #2](https://rpubs.com/Juan-Isaula/1015800)
+
+-   [Guía de Ejercicios \# 3](https://rpubs.com/Juan-Isaula/1027675)
 
 ## Libros Recomendados
 
