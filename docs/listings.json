@@ -9,6 +9,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/estructuras_mercado/index.html",
       "/posts/port_mg/index.html",
       "/posts/top_act/index.html",
       "/posts/tidyverse/index.html",

@@ -10,7 +10,241 @@
 <atom:link href="https://j-isaula.github.io/1619/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Wed, 08 Feb 2023 06:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 13 Apr 2023 06:00:00 GMT</lastBuildDate>
+<item>
+  <title>Estructuras de Mercado con Python</title>
+  <dc:creator>Juan Isaula</dc:creator>
+  <link>https://j-isaula.github.io/1619/posts/estructuras_mercado/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Este post tiene como objetivo dar a conocer la importancia del <code>software</code> de <code>Python</code> en el ambito microeconomico, particularmente en este caso hablamos de las diferentes <code>estructuras de mercado</code>; <code>competencia perfecta</code>, <code>monopolio</code> y <code>oligopolio</code>.</p>
+<section id="qué-aprenderá" class="level3">
+<h3 class="anchored" data-anchor-id="qué-aprenderá">Qué aprenderá</h3>
+<ul>
+<li><p>El comportamiento de la industria en el <strong>corto plazo</strong> y en el <strong>largo plazo</strong></p></li>
+<li><p><strong>Curva de oferta de la industria</strong> a corto plazo y largo plazo</p></li>
+</ul>
+</section>
+<section id="competencia-perfecta" class="level1">
+<h1>Competencia Perfecta</h1>
+<p>Un <strong>productor precio-aceptante</strong> es aquel cuyas acciones no tienen efecto sobre el precio de mercado del bien que vende</p>
+<p>Un <strong>consumidor precio-aceptante</strong> es aquel cuyas acciones no tienen efecto sobre el precio de mercado del bien que compra.</p>
+<p>Un <strong>mercado perfectamente competitivo</strong> es quel en el cual todos los participantes son precio-aceptantes.</p>
+<p>Una <strong>industria perfectamente competitiva</strong> es aquella en la cual los productores son precio-aceptantes.</p>
+<section id="condiciones-necesaria-para-la-competencia-perfecta" class="level2">
+<h2 class="anchored" data-anchor-id="condiciones-necesaria-para-la-competencia-perfecta">Condiciones necesaria para la competencia perfecta</h2>
+<ul>
+<li><p>Muchos productores, ninguno de los cuales tiene una gran cuota de mercado.</p></li>
+<li><p>Una industria puede ser perfectamente competitiva sólo si los consumidores consideran como equivalentes a los productos de todos los productores (<strong>producto homogéneo</strong>)</p></li>
+</ul>
+</section>
+<section id="libre-entrada-y-salida" class="level2">
+<h2 class="anchored" data-anchor-id="libre-entrada-y-salida">Libre entrada y salida</h2>
+<p>Existe <strong>libre entrada y salida en una industria</strong> cuando nuevos productores pueden entrar facilmente en esa industria a los que ya estan en ella pueden abondonarla sin coste alguno.</p>
+<section id="regla-de-producción-optima" class="level3">
+<h3 class="anchored" data-anchor-id="regla-de-producción-optima">Regla de Producción Optima</h3>
+<p>La <strong>regla de producción optima</strong> dice que el beneficio se maximiza cuando se produce la cantidad de output para la cual el ingreso marginal de la última unidad de output producida es igual a su coste marginal.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AIMg%20=%20CMg%0A"></p>
+</section>
+<section id="función-de-benenficios" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-benenficios">Función de Benenficios</h3>
+<p>La función de beneficios <img src="https://latex.codecogs.com/png.latex?(%5Cpi)"> representa las diferencias entre los costos totales, <img src="https://latex.codecogs.com/png.latex?C(Q)"> e ingresos totales,<img src="https://latex.codecogs.com/png.latex?R(Q)"> , de las empresas</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cpi%20=%20R(Q)%20-%20C(Q)%0A"></p>
+</section>
+<section id="tomador-de-precios" class="level3">
+<h3 class="anchored" data-anchor-id="tomador-de-precios">Tomador de Precios</h3>
+<p>Precio igual al costo marginal</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Beqnarray*%7D%0ACMg%20=%20IMg%20=%20P%0A%5Cend%7Beqnarray*%7D%0A"></p>
+<p>Por tanto, se dice que el beneficio de una empresa precio-aceptante se maximiza produciendo la cantidad de output para la cual el costo marginal de la última unidad producida es igual al precio de mercado, tal como se aprecia en el siguiente gráfico</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://j-isaula.github.io/1619/posts/estructuras_mercado/equilibrio.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cantidad de producto que maximiza el beneficio de una empresa precio-aceptante</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="costes-y-producción-en-el-corto-plazo" class="level2">
+<h2 class="anchored" data-anchor-id="costes-y-producción-en-el-corto-plazo">Costes y Producción en el Corto Plazo</h2>
+<p>En el corto plazo tenemos las siguientes condiciones de producción de empresas competitivas</p>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condiciones</th>
+<th>Resultados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P &gt; CVMe mínimo</td>
+<td>La empresa produce en el corto plazo. Si P &lt; CTMe mínimo, la empresa cubre sus costos variables y parte de sus costes fijos pero no todos. Si P &gt; CTMe mínimo, la empresa cubre todos sus costes variables y sus costes fijos.</td>
+</tr>
+<tr class="even">
+<td>P = CVMe mínimo</td>
+<td>La empresa es indiferente entre producir en el corto plazo o no producir. Cubre exactamente sus costes variables.</td>
+</tr>
+<tr class="odd">
+<td>P &lt; CVMe mínimo</td>
+<td>La empresa cierra en el corto plazo. No cubre sus costes variables.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejemplo-1--corto-plazo" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1--corto-plazo">Ejemplo # 1- Corto Plazo</h2>
+<p>Primero resolveremos el siguiente ejercicio de manera manual y posteriormente lo resolveremos en Python.</p>
+<p>Suponga que la empresa tiene una curva de costos de corto plazo dada por</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AC(Q)%20=%20100%20+%2020Q%20+%20Q%5E2%0A"></p>
+<ul>
+<li><p>¿Cuál es la ecuación para el costo variable Medio?</p></li>
+<li><p>¿Cuál es el valor mínimo para el costo variable promedio?</p></li>
+<li><p>¿Cuál es la curva de oferta de corto plazo?</p></li>
+</ul>
+<p><strong><em>Solución</em></strong></p>
+<ul>
+<li><p>Dada la función de costo <img src="https://latex.codecogs.com/png.latex?C(Q)%20=%20100%20+%2020Q%20+%20Q%5E2"> es claro que el costo variable, CV, esta dado por <img src="https://latex.codecogs.com/png.latex?CV%20=%2020Q%20+%20Q%5E2"> por tanto su costo variable promedio es <img src="https://latex.codecogs.com/png.latex?CVMe%20=%20%5Cfrac%7BCV%7D%7BQ%7D%20=%2020%20+%20Q"></p></li>
+<li><p>Ahora bien, su costo marginal sabemos que unicamente requiere aplicar la regla de diferenciación, ya que <img src="https://latex.codecogs.com/png.latex?CMg%20=%20%5Cfrac%7B%5Cpartial%20C(Q)%7D%7B%5Cpartial%20Q%7D%20=%2020%20+%202Q"></p></li>
+<li><p>Si queremos encontrar el costo variable promedio mínimo, <img src="https://latex.codecogs.com/png.latex?CVMe_%7B%5Cmin%7D">, se obtiene como <img src="https://latex.codecogs.com/png.latex?CMg%20=%20CVMe%20%5Clongrightarrow%20Q%20=%20%5Cfbox%7B0%7D"></p></li>
+<li><p>Entonces la función de oferta es: <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Beqnarray*%7DCMg%20&amp;=&amp;%20p%5C%5C%5B0.2cm%5D%2020%20+%202Q%20&amp;=&amp;%20P%5C%5C%5B0.2cm%5D%20Q(P)%20&amp;=&amp;%20%5Cfrac%7BP%7D%7B2%7D%20-%2010%20%5Cend%7Beqnarray*%7D"></p></li>
+</ul>
+<p>Por tanto, también podemos obtener el precio de equilibrio, ya que <img src="https://latex.codecogs.com/png.latex?0%20=%20%5Cfrac%7BP%7D%7B2%7D%20-%2010%20%5Clongrightarrow%20P%20=%20%5Cfbox%7B20%7D"></p>
+<p>Ahora, encontremos estos resultados en Python:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;"># Paquete previo </span></span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">from</span> sympy <span class="im" style="color: #00769E;">import</span> <span class="op" style="color: #5E5E5E;">*</span></span>
+<span id="cb1-3">Q <span class="op" style="color: #5E5E5E;">=</span> symbols(<span class="st" style="color: #20794D;">"Q"</span>)</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;"># función de costo de corto plazo </span></span>
+<span id="cb1-7">CT <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">100</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">20</span><span class="op" style="color: #5E5E5E;">*</span>Q <span class="op" style="color: #5E5E5E;">+</span> Q<span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;"># costo variale promedio </span></span>
+<span id="cb1-9">CV <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">20</span> <span class="op" style="color: #5E5E5E;">+</span> Q </span>
+<span id="cb1-10"><span class="co" style="color: #5E5E5E;"># Encontrar el costo variable minimo </span></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;"># Primero: costo marginal</span></span>
+<span id="cb1-12"></span>
+<span id="cb1-13">CM <span class="op" style="color: #5E5E5E;">=</span> diff(CT,Q)</span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;"># igualar costo marginal y costo variable promedio </span></span>
+<span id="cb2-2">solve(Eq(CM,CV))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>[0]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">cantidad <span class="op" style="color: #5E5E5E;">=</span> solve(Eq(CM,CV))</span>
+<span id="cb4-2">cantidad[<span class="dv" style="color: #AD0000;">0</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%200"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">P <span class="op" style="color: #5E5E5E;">=</span> CV.subs({Q:cantidad[<span class="dv" style="color: #AD0000;">0</span>]})</span>
+<span id="cb5-2">P</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%2020"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">plot(CT, CT<span class="op" style="color: #5E5E5E;">/</span>Q, CV, CM, (Q,<span class="dv" style="color: #AD0000;">0</span>,<span class="dv" style="color: #AD0000;">100</span>), xlim <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">100</span>), ylim <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">0</span>,<span class="dv" style="color: #AD0000;">100</span>), xlabel <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"Q"</span>, ylabel <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"P"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://j-isaula.github.io/1619/posts/estructuras_mercado/index_files/figure-html/cell-6-output-1.png" width="661" height="468"></p>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>&lt;sympy.plotting.plot.Plot at 0x1d21a63ab20&gt;</code></pre>
+</div>
+</div>
+<p>Puedes notar lo rápido y fácil que resulta realizar estos procedimientos con Python y la utilidad que puede brindarte en caso de que trabajes con volumnes de datos.</p>
+<section id="ejemplo-2---corto-plazo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-2---corto-plazo">Ejemplo # 2 - Corto Plazo</h3>
+<p>Ahora suponga que la empresa tiene una curva costos en el corto plazo de la siguiente forma:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AC(Q)%20=%201%20+%2010Q%20+%20Q%5E2%0A"></p>
+<p>Si la empresa opera en un mercado perfectamente competitivo, donde <img src="https://latex.codecogs.com/png.latex?P%20=%2012">, ¿Cuál será los beneficios de la empresa en el corto plazo?</p>
+<p><strong><em>Solución</em></strong></p>
+<p>Sabemos que la función de beneficios esta dada por</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cpi%20=%20R%20-%20C%0A"></p>
+<p>entonces,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B%5Cpartial%20%5Cpi%7D%7B%5Cpartial%20Q%7D%20=%20IMg%20-%20CMg%20=%200%0A"></p>
+<p>así pues,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0ACMg%20=%2010%20+%202Q%20%5Chspace%7B1cm%7Dy%5Chspace%7B1cm%7D%20IMg%20=%20P%0A"></p>
+<p>por tanto,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Beqnarray*%7D%0ACMg%20&amp;=&amp;%20IMg%5C%5C%5B0.2cm%5D%0A10%20+%202Q%20&amp;=&amp;%20P%5C%5C%5B0.2cm%5D%0AQ%20&amp;=&amp;%20%5Cfrac%7BP%7D%7B2%7D%20-%205%5C%5C%5B0.2cm%5D%0AQ%20&amp;=&amp;%20%5Cfrac%7B12%7D%7B2%7D%20-%205,%20%5Chspace%7B2cm%7D%5Cmbox%7Bya%20que%20P%20=%2012%7D%5C%5C%5B0.2cm%5D%0AQ%20&amp;=&amp;%20%5Cfbox%7B1%7D%0A%5Cend%7Beqnarray*%7D%0A"></p>
+<p>entonces,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cpi%20=%2012%20-%20(1%20+%2010%20+1)%20=%20%5Cfbox%7B0%7D%0A"></p>
+<p>Ahora veamos esta solución en Python:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="co" style="color: #5E5E5E;"># Función de costos a corto plazo </span></span>
+<span id="cb8-2">Q <span class="op" style="color: #5E5E5E;">=</span> symbols(<span class="st" style="color: #20794D;">"Q"</span>)</span>
+<span id="cb8-3">CT <span class="op" style="color: #5E5E5E;">=</span> Q<span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">10</span><span class="op" style="color: #5E5E5E;">*</span>Q <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span></span>
+<span id="cb8-4">P <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">12</span></span>
+<span id="cb8-5">R <span class="op" style="color: #5E5E5E;">=</span> P<span class="op" style="color: #5E5E5E;">*</span>Q</span>
+<span id="cb8-6"><span class="co" style="color: #5E5E5E;"># costo marginal</span></span>
+<span id="cb8-7">CM <span class="op" style="color: #5E5E5E;">=</span> diff(CT,Q)</span>
+<span id="cb8-8">CM</span>
+<span id="cb8-9">IM <span class="op" style="color: #5E5E5E;">=</span> diff(R,Q)</span>
+<span id="cb8-10">IM</span>
+<span id="cb8-11">cantidad <span class="op" style="color: #5E5E5E;">=</span> solve(Eq(IM,CM))</span>
+<span id="cb8-12"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">"El valor de la producción que garantiza un equilibrio será:"</span>, cantidad[<span class="dv" style="color: #AD0000;">0</span>])</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de la producción que garantiza un equilibrio será: 1</code></pre>
+</div>
+</div>
+<p>Este resultado lo que nos dice es que la empresa oferta una unidad de producción <img src="https://latex.codecogs.com/png.latex?Q%20=%201">.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="co" style="color: #5E5E5E;"># Beneficio = IT - CT</span></span>
+<span id="cb10-2">costo <span class="op" style="color: #5E5E5E;">=</span> CT.subs({Q:cantidad[<span class="dv" style="color: #AD0000;">0</span>]})</span>
+<span id="cb10-3">costo</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%2012"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">ingreso <span class="op" style="color: #5E5E5E;">=</span> R.subs({Q:cantidad[<span class="dv" style="color: #AD0000;">0</span>]})</span>
+<span id="cb11-2">ingreso </span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%2012"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">Beneficios <span class="op" style="color: #5E5E5E;">=</span> R <span class="op" style="color: #5E5E5E;">-</span> CT</span>
+<span id="cb12-2">pi <span class="op" style="color: #5E5E5E;">=</span> Beneficios.subs({Q:cantidad[<span class="dv" style="color: #AD0000;">0</span>]})</span>
+<span id="cb12-3">pi</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%200"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">plot(CT,CM,CT<span class="op" style="color: #5E5E5E;">/</span>Q,(Q,<span class="dv" style="color: #AD0000;">0</span>,<span class="dv" style="color: #AD0000;">60</span>), xlim<span class="op" style="color: #5E5E5E;">=</span>(<span class="dv" style="color: #AD0000;">0</span>,<span class="dv" style="color: #AD0000;">5</span>), ylim<span class="op" style="color: #5E5E5E;">=</span>(<span class="dv" style="color: #AD0000;">0</span>,<span class="dv" style="color: #AD0000;">30</span>), xlabel<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Q'</span>, ylabel<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'CT,CM'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://j-isaula.github.io/1619/posts/estructuras_mercado/index_files/figure-html/cell-11-output-1.png" width="661" height="468"></p>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>&lt;sympy.plotting.plot.Plot at 0x1d219ed7ac0&gt;</code></pre>
+</div>
+</div>
+<p>Recuerde que todo este análisis se realizo para un mercado en competencia perfecta a corto plazo.</p>
+<p><code>Pronto actualizare para el mercado en competencia perfecta a largo plazo, monopolio, e introducirnos un poco a la teoria de juegos.</code></p>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>CMg</category>
+  <category>CVP</category>
+  <category>CTP</category>
+  <category>Python</category>
+  <guid>https://j-isaula.github.io/1619/posts/estructuras_mercado/index.html</guid>
+  <pubDate>Thu, 13 Apr 2023 06:00:00 GMT</pubDate>
+  <media:content url="https://j-isaula.github.io/1619/posts/estructuras_mercado/estruct_mercd.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Portfolio management</title>
   <dc:creator>Juan Isaula</dc:creator>
@@ -191,8 +425,111 @@
 <li><p>Las preguntas son, ¿como decidir cuánto riesgo tomar? ¿cómo obtener el mejor rendimiento? Pero la teoría de los derivados se basa en no correr ningún riesgo en absoluto, por lo que he dedicado tiempo a gestión de cartera en este post.</p></li>
 <li><p>Existe tanta incertidumbre en el tema de las finanzas que la eliminación del riesgo es casi imposible y las ideas detrás de la gestión de carteras deben ser apreciadas por cualquier persona involucrada en derivados.</p></li>
 </ul>
+</section>
+<section id="valor-en-riesgo-value-at-risk" class="level1">
+<h1>Valor en Riesgo (Value at Risk)</h1>
+<section id="definición" class="level2">
+<h2 class="anchored" data-anchor-id="definición">Definición</h2>
+<p>El valor en riesgo es una estimación, con un cierto grado de confianza, de cuánto se puede perder de la cartera, en un horizonte de tiempo dado.<br>
+</p>
+<p>El grado de confianza normalmente se establece en 95%, 87.5%, 99%, etc. El horizonte temporal de interés puede ser de un día, por ejemplo, para actividades comerciales o de meses para gestión de cartera.</p>
+<p>Como ejemplo de VaR, podemos calcular (mediane los métodos que e describirán aquí) que durante la próxima semana hay un 95% de probabilidad de que no perdamos más de $10 millones. Podemos escribir esto como</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AProb%5C%7B%5Cdelta%20V%20%5Cleq%20-%5C$10%20m%5C%7D%20=%200.05%0A"></p>
+<p>donde <img src="https://latex.codecogs.com/png.latex?%5Cdelta%20V"> es el cambio en el valor de la cartera. (uso <img src="https://latex.codecogs.com/png.latex?%5Cdelta"> para “<em>el cambio en”</em> para enfatizar que estamos considerando cambios en un tiempo finito.) En símbolos, esto es</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AProb%5C%7B%5Cdelta%20V%20%5Cleq%20-VaR%5C%7D=%201-%20c%0A"></p>
+<p>donde el grado de confianza es <img src="https://latex.codecogs.com/png.latex?c">.</p>
+<p>El <code>VaR</code> se calcula asumiendo circustancias de mercado normales, lo que significa que el mercado extremo no se consideran condiciones como choques, o se examinan por separado. Así, efectivamente, el VaR mide lo que se puede esperar que suceda durante la operación diaria de una institución.</p>
+<p>Para el computo del VaR requerimos disponer al menos de los siguientes datos:</p>
+<ul>
+<li><p>Los precios vigentes de todos los activos en cartera y,</p></li>
+<li><p>sus volatilidadesa y correlaciones entre ellos</p></li>
+</ul>
+<p>Si los bienes son negociados podemos tomar los precios del mercado <strong><em>(marking to market).</em></strong></p>
+<p>Por lo general, se supone que el movimiento de los componentes de la cartera son aleatorias y extraídas de distribuciones normales.</p>
+</section>
+<section id="var-para-un-único-activo" class="level2">
+<h2 class="anchored" data-anchor-id="var-para-un-único-activo">VaR para un único activo</h2>
+<p>Empecemos por estimar el VaR de una cartera compuesta por un único activo.</p>
+<p>Supongamos que tenemos una cantidad de una acción con precio <img src="https://latex.codecogs.com/png.latex?S"> y volatilidad <img src="https://latex.codecogs.com/png.latex?%5Csigma">. Queremos saber con el 99% de confianza cuál es el máximo que podemos perder durante la próxima semana, estoy usando notación deliberadamente similar al del mundo de los derivados</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Csigma%20S%5Cleft(%5Cbegin%7Barray%7D%7B0%7D%5Cfrac%7B1%7D%7B52%7D%5Cend%7Barray%7D%5Cright)%5E%7B1/2%7D%0A"></p>
+<p>ya que el paso de tiempo es <img src="https://latex.codecogs.com/png.latex?1/52"> de un año. Finalmente, debemos calcular la posición de la cola extrema izquierda de esta distribución correspondiente a</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A1%5C%25%20=%20100%20-%2099%5C%25%0A"></p>
+<p>Solo necesitamos hacer esto para la distribución normal estandarizada, porque podemos llegar a cualquier otra distribución escalando. En la siguiente tabla, vemos que el intervalo de confianza del 99% corresponde a 2.33 desviaciones estándar de la media.</p>
+<table class="table">
+<caption>Grado de confianza y la relación con la desviación de la media.</caption>
+<thead>
+<tr class="header">
+<th>Grado de Confianza (%)</th>
+<th>Número de desviaciones estándar de la media</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>99</td>
+<td>2.326342</td>
+</tr>
+<tr class="even">
+<td>98</td>
+<td>2.053748</td>
+</tr>
+<tr class="odd">
+<td>97</td>
+<td>1.88079</td>
+</tr>
+<tr class="even">
+<td>96</td>
+<td>1.750686</td>
+</tr>
+<tr class="odd">
+<td>95</td>
+<td>1.644853</td>
+</tr>
+<tr class="even">
+<td>90</td>
+<td>1.281551</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Dado que tenemos una cantidad de acciones, el VaR es dado por</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A2.33%5Csigma%5Ctriangle%20S(1/52)%5E%7B1/2%7D%0A"></p>
+<p>De manera general, si el horizonte de tiempo es <img src="https://latex.codecogs.com/png.latex?%5Cdelta%20t"> y el grado de confianza es <img src="https://latex.codecogs.com/png.latex?c">, tenemos</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AVaR%20=%20-%5Csigma%20%5Ctriangle%20S(%5Cdelta%20t)%5E%7B1/2%7D%5Calpha(1-c)%0A"></p>
+<p>donde <img src="https://latex.codecogs.com/png.latex?%5Calpha(.)"> es la función de distribución acumulativa inverdsa para la distribución Normal estandarizada, que se muestra en la Figura 9,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://j-isaula.github.io/1619/posts/port_mg/im8.PNG" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 9: Función de distribución acumulativa inversa para la distribución Normal Estandarizada.</figcaption><p></p>
+</figure>
+</div>
+<p>En la Figura 10 hemos supuesto que el rendimiento del activo se distribuye normalmente con una media cero. La suposición de media cero es válida para horizontes temporales cortos: La desviación estándar del rendimiento escala con la raíz cuadrada del tiempo pero la media escala con el tiempo mismo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://j-isaula.github.io/1619/posts/port_mg/im9.PNG" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 10: La distribución de los rendimientos futuros de las acciones.</figcaption><p></p>
+</figure>
+</div>
+<p>Para horizontes a más largo plazo, el rendimiento se desplaza hacia la derecha (es de esperar) en una cantidad proporcional al horizonte de tiempo. Por lo tanto, para escalas de tiempo más largas, la ecuación anterior debe modificarse para tener en cuenta el derivado del valor del activo. Si la tasa de este derivado es <img src="https://latex.codecogs.com/png.latex?%5Cmu"> entonces la ecuación anterior se convierte en</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AVaR%20=%20%5Ctriangle%20S(%5Cmu%20%5Cdelta%20t%20-%20%5Csigma%20%5Cdelta%20t%5E%7B1/2%7D%20%5Calpha(1-c))%0A"></p>
+</section>
+<section id="var-para-un-portafolio-o-cartera" class="level2">
+<h2 class="anchored" data-anchor-id="var-para-un-portafolio-o-cartera">VaR para un Portafolio o Cartera</h2>
+<p>Si conocemos las volatilidades de todos los activos de nuestra cartera y las correlaciones entre ellos entonces podemos calcular el VaR para toda la cartera.</p>
+<p>Si la volatilidad del i-ésimo activo es <img src="https://latex.codecogs.com/png.latex?%5Csigma_i"> y la correlación entre el i-ésimo y el j-ésimo activo es <img src="https://latex.codecogs.com/png.latex?%5Crho_%7Bij%7D"> (con <img src="https://latex.codecogs.com/png.latex?%5Crho_%7Bii%7D%20=%201">), entonces el VaR para la cartera compuesta por M activos con una participación de i del i-ésimo activo es</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A-%5Calpha(1-c)%5Cdelta%20t%5E%7B1/2%7D%5Csqrt%7B%5Csum_%7Bj=1%7D%5EM%5Csum_%7Bi=1%7D%5EM%20%5Ctriangle_i%5Ctriangle_j%5Csigma_i%5Csigma_j%5Crho_%7Bij%7DS_iS_j%7D%0A"></p>
+</section>
+<section id="uso-del-var-como-medida-de-rendimiento" class="level2">
+<h2 class="anchored" data-anchor-id="uso-del-var-como-medida-de-rendimiento">Uso del VaR como medida de rendimiento</h2>
+<p>Uno de los usos del VaR en la medición del desempeño de bancos, mesas o comerciantes. En el pasado, el <em>“talento comercial</em>” se ha medido únicamente en términos de ganancias; la bonificación de un comerciante esta relacionado con esa ganancia. Esto anima a los comerciante a asumir riesgos; piensa en lanzar una moneda al aire y recibes un porcentaje de la ganancia pero sin la desventaja (que se lleva el banco), ¿cuánto apostarías? Una mejor medida del talento comercial podría tener en cuenta el riesgo en tal apuesta, y premiar una buena relación rendimiento-roesgo. El ratio</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B%5Cmbox%7BRetorno%20superior%20al%20libre%20de%20riesgo%7D%7D%7Bvolatilidad%7D%20=%20%5Cfrac%7B%5Cmu%20-%20r%7D%7B%5Csigma%7D%0A"></p>
+<p>La relación de Sharpe, es una medida de este tipo. Alternativamente, use VaR como la medida de riesgo y ganancia/pérdida como medida de rendimiento.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B%5Cmbox%7BPerdidads%20y%20ganancias%20diarias%7D%7D%7B%5Cmbox%7BVaR%20diaria%7D%7D%0A"></p>
 
 
+</section>
 </section>
 
  ]]></description>
