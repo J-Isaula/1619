@@ -292,3 +292,117 @@ La Figura 8 muestra el valor de la cartera frente al tiempo para un buen adminis
 -   Las preguntas son, ¿como decidir cuánto riesgo tomar? ¿cómo obtener el mejor rendimiento? Pero la teoría de los derivados se basa en no correr ningún riesgo en absoluto, por lo que he dedicado tiempo a gestión de cartera en este post.
 
 -   Existe tanta incertidumbre en el tema de las finanzas que la eliminación del riesgo es casi imposible y las ideas detrás de la gestión de carteras deben ser apreciadas por cualquier persona involucrada en derivados.
+
+# Valor en Riesgo (Value at Risk)
+
+## Definición
+
+El valor en riesgo es una estimación, con un cierto grado de confianza, de cuánto se puede perder de la cartera, en un horizonte de tiempo dado.\
+
+El grado de confianza normalmente se establece en 95%, 87.5%, 99%, etc. El horizonte temporal de interés puede ser de un día, por ejemplo, para actividades comerciales o de meses para gestión de cartera.
+
+Como ejemplo de VaR, podemos calcular (mediane los métodos que e describirán aquí) que durante la próxima semana hay un 95% de probabilidad de que no perdamos más de \$10 millones. Podemos escribir esto como
+
+$$
+Prob\{\delta V \leq -\$10 m\} = 0.05
+$$
+
+donde $\delta V$ es el cambio en el valor de la cartera. (uso $\delta$ para "*el cambio en"* para enfatizar que estamos considerando cambios en un tiempo finito.) En símbolos, esto es
+
+$$
+Prob\{\delta V \leq -VaR\}= 1- c
+$$
+
+donde el grado de confianza es $c$.
+
+El `VaR` se calcula asumiendo circustancias de mercado normales, lo que significa que el mercado extremo no se consideran condiciones como choques, o se examinan por separado. Así, efectivamente, el VaR mide lo que se puede esperar que suceda durante la operación diaria de una institución.
+
+Para el computo del VaR requerimos disponer al menos de los siguientes datos:
+
+-   Los precios vigentes de todos los activos en cartera y,
+
+-   sus volatilidadesa y correlaciones entre ellos
+
+Si los bienes son negociados podemos tomar los precios del mercado ***(marking to market).***
+
+Por lo general, se supone que el movimiento de los componentes de la cartera son aleatorias y extraídas de distribuciones normales.
+
+## VaR para un único activo
+
+Empecemos por estimar el VaR de una cartera compuesta por un único activo.
+
+Supongamos que tenemos una cantidad de una acción con precio $S$ y volatilidad $\sigma$. Queremos saber con el 99% de confianza cuál es el máximo que podemos perder durante la próxima semana, estoy usando notación deliberadamente similar al del mundo de los derivados
+
+$$
+\sigma S\left(\begin{array}{0}\frac{1}{52}\end{array}\right)^{1/2}
+$$
+
+ya que el paso de tiempo es $1/52$ de un año. Finalmente, debemos calcular la posición de la cola extrema izquierda de esta distribución correspondiente a
+
+$$
+1\% = 100 - 99\% 
+$$
+
+Solo necesitamos hacer esto para la distribución normal estandarizada, porque podemos llegar a cualquier otra distribución escalando. En la siguiente tabla, vemos que el intervalo de confianza del 99% corresponde a 2.33 desviaciones estándar de la media.
+
+| Grado de Confianza (%) | Número de desviaciones estándar de la media |
+|------------------------|---------------------------------------------|
+| 99                     | 2.326342                                    |
+| 98                     | 2.053748                                    |
+| 97                     | 1.88079                                     |
+| 96                     | 1.750686                                    |
+| 95                     | 1.644853                                    |
+| 90                     | 1.281551                                    |
+|                        |                                             |
+
+: Grado de confianza y la relación con la desviación de la media.
+
+Dado que tenemos una cantidad de acciones, el VaR es dado por
+
+$$
+2.33\sigma\triangle S(1/52)^{1/2}
+$$
+
+De manera general, si el horizonte de tiempo es $\delta t$ y el grado de confianza es $c$, tenemos
+
+$$
+VaR = -\sigma \triangle S(\delta t)^{1/2}\alpha(1-c)
+$$
+
+donde $\alpha(.)$ es la función de distribución acumulativa inverdsa para la distribución Normal estandarizada, que se muestra en la Figura 9,
+
+![Figura 9: Función de distribución acumulativa inversa para la distribución Normal Estandarizada.](im8.PNG)
+
+En la Figura 10 hemos supuesto que el rendimiento del activo se distribuye normalmente con una media cero. La suposición de media cero es válida para horizontes temporales cortos: La desviación estándar del rendimiento escala con la raíz cuadrada del tiempo pero la media escala con el tiempo mismo.
+
+![Figura 10: La distribución de los rendimientos futuros de las acciones.](im9.PNG)
+
+Para horizontes a más largo plazo, el rendimiento se desplaza hacia la derecha (es de esperar) en una cantidad proporcional al horizonte de tiempo. Por lo tanto, para escalas de tiempo más largas, la ecuación anterior debe modificarse para tener en cuenta el derivado del valor del activo. Si la tasa de este derivado es $\mu$ entonces la ecuación anterior se convierte en
+
+$$
+VaR = \triangle S(\mu \delta t - \sigma \delta t^{1/2} \alpha(1-c))
+$$
+
+## VaR para un Portafolio o Cartera
+
+Si conocemos las volatilidades de todos los activos de nuestra cartera y las correlaciones entre ellos entonces podemos calcular el VaR para toda la cartera.
+
+Si la volatilidad del i-ésimo activo es $\sigma_i$ y la correlación entre el i-ésimo y el j-ésimo activo es $\rho_{ij}$ (con $\rho_{ii} = 1$), entonces el VaR para la cartera compuesta por M activos con una participación de i del i-ésimo activo es
+
+$$
+-\alpha(1-c)\delta t^{1/2}\sqrt{\sum_{j=1}^M\sum_{i=1}^M \triangle_i\triangle_j\sigma_i\sigma_j\rho_{ij}S_iS_j}
+$$
+
+## Uso del VaR como medida de rendimiento
+
+Uno de los usos del VaR en la medición del desempeño de bancos, mesas o comerciantes. En el pasado, el *"talento comercial*" se ha medido únicamente en términos de ganancias; la bonificación de un comerciante esta relacionado con esa ganancia. Esto anima a los comerciante a asumir riesgos; piensa en lanzar una moneda al aire y recibes un porcentaje de la ganancia pero sin la desventaja (que se lleva el banco), ¿cuánto apostarías? Una mejor medida del talento comercial podría tener en cuenta el riesgo en tal apuesta, y premiar una buena relación rendimiento-roesgo. El ratio
+
+$$
+\frac{\mbox{Retorno superior al libre de riesgo}}{volatilidad} = \frac{\mu - r}{\sigma}
+$$
+
+La relación de Sharpe, es una medida de este tipo. Alternativamente, use VaR como la medida de riesgo y ganancia/pérdida como medida de rendimiento.
+
+$$
+\frac{\mbox{Perdidads y ganancias diarias}}{\mbox{VaR diaria}}
+$$
